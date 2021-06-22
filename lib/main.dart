@@ -3,19 +3,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'Screens/Home/home.dart';
+import 'Screens/onBoarding/onboardingScreen.dart';
+
 int? initScreen;
-// Boolean check if the pintSize application has already been launched in the past
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
   ));
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
   SharedPreferences preferences = await SharedPreferences.getInstance();
   initScreen = preferences.getInt('OnBoardingScreen');
-  // await preferences.setInt('initScreen', 1);
+
   runApp(MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   static final String title = 'PintSize App';
@@ -29,8 +36,75 @@ class MyApp extends StatelessWidget {
         initialRoute:
             initScreen == 0 || initScreen == null ? 'onboard' : 'home',
         routes: {
-          // 'home': (context) => HomeScreen(),
-          // 'onboard': (context) => OnBoardingScreen()
+          'home': (context) => HomeScreen(),
+          'onboard': (context) => OnBoardingScreen()
         });
   }
 }
+
+// class MyApp extends StatelessWidget {
+//   static final String title = 'Firebase Setup';
+
+//   @override
+//   Widget build(BuildContext context) => MaterialApp(
+//         debugShowCheckedModeBanner: false,
+//         title: title,
+//         theme: ThemeData(primarySwatch: Colors.blue),
+//         home: MainPage(),
+//       );
+// }
+
+// class MainPage extends StatefulWidget {
+//   @override
+//   _MainPageState createState() => _MainPageState();
+// }
+
+// class _MainPageState extends State<MainPage> {
+//   @override
+//   Widget build(BuildContext context) => Scaffold(
+//         backgroundColor: Colors.indigoAccent.withOpacity(0.2),
+//         appBar: AppBar(
+//           title: Text(MyApp.title),
+//           centerTitle: true,
+//         ),
+//         body: Container(
+//           padding: EdgeInsets.all(16),
+//           child: Center(
+//             child: Column(
+//               mainAxisAlignment: MainAxisAlignment.center,
+//               children: [
+//                 FlutterLogo(size: 100),
+//                 RichText(
+//                   textAlign: TextAlign.center,
+//                   text: TextSpan(
+//                     style: TextStyle(
+//                       fontSize: 36,
+//                       height: 1.3,
+//                       fontWeight: FontWeight.bold,
+//                       color: Colors.black,
+//                     ),
+//                     children: [
+//                       TextSpan(
+//                         text: 'iOS\n',
+//                         style: TextStyle(
+//                           color: Colors.lightGreenAccent.withOpacity(0.8),
+//                           fontWeight: FontWeight.w400,
+//                           height: 3,
+//                         ),
+//                       ),
+//                       TextSpan(
+//                         text: 'Firebase Setup',
+//                         style: TextStyle(
+//                           color: Colors.white,
+//                           fontWeight: FontWeight.bold,
+//                         ),
+//                       ),
+//                     ],
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ),
+//       );
+// }
