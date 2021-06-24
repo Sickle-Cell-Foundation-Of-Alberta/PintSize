@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:pintsize/Widgets/bottomNav/bottom_bar.dart';
-import 'package:pintsize/components/silverappBar.dart';
-import 'package:pintsize/delegates/silverHeader.dart';
+import 'package:pintsize/Components/SliverHeader.dart';
+import 'package:pintsize/Components/sliverappBar.dart';
+import 'package:pintsize/Screens/Home/subPages/awareness.dart';
+import 'package:pintsize/Screens/Home/subPages/dailyTips.dart';
+import 'package:pintsize/Screens/Home/subPages/mythsFacts.dart';
+import 'package:pintsize/Screens/Home/subPages/resources.dart';
+import 'package:pintsize/Widgets/bottomNav/bottomBar.dart';
 import 'package:tuple/tuple.dart';
-import 'homeTabs/awareness.dart';
-import 'homeTabs/homepage_awareness.dart';
-import 'homeTabs/dailyTips.dart';
-import 'homeTabs/homepage_dailyTips.dart';
-import 'homeTabs/mythsFacts.dart';
-import 'homeTabs/homepage_mythsFacts.dart';
-import 'homeTabs/resources.dart';
-import 'homeTabs/homepage_resources.dart';
+
+import 'homeTabs/homepageAwareness.dart';
+import 'homeTabs/homepageDailyTips.dart';
+import 'homeTabs/homepageMythsFacts.dart';
+import 'homeTabs/homepageResources.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -49,17 +50,19 @@ class _HomeScreenState extends State<HomeScreen>
               return <Widget>[
                 PortfolioSliverAppBar(_pages[_tabController.index].item1),
                 SliverPersistentHeader(
+                    pinned: true,
+                    floating: false,
                     delegate: SliverPresistentHeader(
                         tabBar: TabBar(
-                  controller: _tabController,
-                  isScrollable: true,
-                  labelColor: Color(0xFFC88D67),
-                  indicatorColor: Color(0xFFC88D67),
-                  unselectedLabelColor: Color(0xFFCDCDCD),
-                  tabs: _pages
-                      .map<Tab>((Tuple2 page) => Tab(text: page.item1))
-                      .toList(),
-                )))
+                      controller: _tabController,
+                      isScrollable: true,
+                      labelColor: Color(0xFFC88D67),
+                      indicatorColor: Color(0xFFC88D67),
+                      unselectedLabelColor: Color(0xFFCDCDCD),
+                      tabs: _pages
+                          .map<Tab>((Tuple2 page) => Tab(text: page.item1))
+                          .toList(),
+                    )))
               ];
             },
             body: Container(
@@ -71,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen>
                     AwarenessPage(),
                     DailyTipsPage(),
                     ResourcePage(),
-                    MythsFactsPage()
+                    MythFactsPage(),
                   ],
                 ))),
         floatingActionButton: FloatingActionButton(
@@ -83,3 +86,5 @@ class _HomeScreenState extends State<HomeScreen>
         bottomNavigationBar: BottomBar());
   }
 }
+
+class MythsFactsPage {}

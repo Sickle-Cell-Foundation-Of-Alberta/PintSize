@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pintsize/Config/backgroundPalette.dart';
 import 'package:pintsize/Screens/Home/home.dart';
-import 'package:pintsize/Widgets/background/background_painter.dart';
-import 'package:pintsize/config/background_palette.dart';
-
+import 'package:pintsize/Widgets/background/backgroundPainter.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   @override
