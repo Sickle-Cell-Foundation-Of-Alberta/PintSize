@@ -1,4 +1,4 @@
-package com.example.pintsize.pintsize
+package com.example.pintsize
 
 import io.flutter.embedding.android.FlutterActivity
 
