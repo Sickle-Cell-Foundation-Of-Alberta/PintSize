@@ -55,6 +55,67 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
                             side: BorderSide(color: Palette.moderateRed)))),
                 onPressed: () => goToHome(context)),
           ])),
+      Container(
+          alignment: Alignment.bottomRight,
+          padding: EdgeInsets.only(bottom: 300),
+          child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+            /*TextButton(
+                child: Text("Get Started ",
+                    style: TextStyle(fontSize: 18, color: Palette.moderateRed)),
+                style: ButtonStyle(
+                    padding: MaterialStateProperty.all<EdgeInsets>(
+                        EdgeInsets.all(20)),
+                    foregroundColor:
+                        MaterialStateProperty.all<Color>(Colors.red),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                            side: BorderSide(color: Palette.moderateRed)))),
+                onPressed: () => goToHome(context)),*/
+            Image.asset(
+              'assets/Frame.png',
+              width: 200,
+              height: 155,
+            )
+          ])),
+      Container(
+          alignment: Alignment.bottomCenter,
+          padding: EdgeInsets.only(top: 290, right: 210, left: 10),
+          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+            Text("Sickle Cell",
+                style: TextStyle(
+                    fontSize: 24,
+                    color: Palette.moderateRed,
+                    fontWeight: FontWeight.bold)),
+            new Text("Foundation of",
+                style: TextStyle(
+                    fontSize: 20,
+                    color: Palette.moderateRed,
+                    fontWeight: FontWeight.normal)),
+            new Text("Alberta",
+                style: TextStyle(
+                    fontSize: 20,
+                    color: Palette.moderateRed,
+                    fontWeight: FontWeight.normal)),
+            /*TextButton(
+                child: Text("Get Started ",
+                    style: TextStyle(fontSize: 18, color: Palette.moderateRed)),
+                style: ButtonStyle(
+                    padding: MaterialStateProperty.all<EdgeInsets>(
+                        EdgeInsets.all(20)),
+                    foregroundColor:
+                        MaterialStateProperty.all<Color>(Colors.red),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                            side: BorderSide(color: Palette.moderateRed)))),
+                onPressed: () => goToHome(context)),
+            Image.asset(
+              'assets/Frame.png',
+              width: 200,
+              height: 155,
+            )*/
+          ])),
     ]));
   }
 
