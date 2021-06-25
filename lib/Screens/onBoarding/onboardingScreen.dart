@@ -54,6 +54,13 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
                             borderRadius: BorderRadius.circular(18.0),
                             side: BorderSide(color: Palette.moderateRed)))),
                 onPressed: () => goToHome(context)),
+            Container(
+                alignment: Alignment.centerLeft,
+                padding: EdgeInsets.only(top: 100, left: 50),
+                child:
+                    Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+                  Image.asset('assets/images/flutter_onboarding_1.png'),
+                ])),
           ])),
     ]));
   }
