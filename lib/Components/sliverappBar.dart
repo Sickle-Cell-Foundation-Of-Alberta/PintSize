@@ -15,23 +15,24 @@ class PortfolioSliverAppBar extends StatelessWidget {
           borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(40),
               bottomRight: Radius.circular(40))),
-      expandedHeight: 200.0,
+      expandedHeight: 230.0,
       floating: true,
-      pinned: false,
-      snap: true,
+      pinned: true,
+      // snap: true,
       elevation: 40,
       backgroundColor: Colors.red,
-      flexibleSpace: FlexibleSpaceBar(
+      flexibleSpace: Container(
+        child: FlexibleSpaceBar(
         centerTitle: true,
         title: SizedBox(
           // height: 120,
           child: SingleChildScrollView(
             child: Padding(
-                padding: const EdgeInsets.only(top: 25),
+                padding: const EdgeInsets.only(top: 3),
                 child: Column(
                   children: <Widget>[
                     SizedBox(
-                      height: 15,
+                      height: 34,
                     ),
                     Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -155,6 +156,9 @@ class PortfolioSliverAppBar extends StatelessWidget {
           ),
         ),
       ),
-    );
+      ),
+        );
+    //   ),
+    // );
   }
 }

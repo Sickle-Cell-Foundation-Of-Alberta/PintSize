@@ -12,17 +12,17 @@
 # IntelliJ related
 *.iml
 *.ipr
-.iws
+*.iws
 .idea/
-
+./Runner/GoogleService-Info.plist
 # The .vscode folder contains launch configuration and tasks you configure in
 # VS Code which you may wish to be included in version control, so this line
 # is commented out by default.
 #.vscode/
 
 # Flutter/Dart/Pub related
-/doc/api/
-/ios/Flutter/.last_build_id
+**/doc/api/
+**/ios/Flutter/.last_build_id
 .dart_tool/
 .flutter-plugins
 .flutter-plugins-dependencies
@@ -35,7 +35,7 @@
 lib/generated_plugin_registrant.dart
 
 # Symbolication related
-app..symbols
+app.*.symbols
 
 # Obfuscation related
 app.*.map.json
@@ -44,9 +44,3 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-
-
-# Firebase
-google-services.json
-/android/app/google-services.json
-.google-services.json
