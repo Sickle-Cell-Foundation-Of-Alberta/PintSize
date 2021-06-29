@@ -54,10 +54,22 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
                             borderRadius: BorderRadius.circular(18.0),
                             side: BorderSide(color: Palette.moderateRed)))),
                 onPressed: () => goToHome(context)),
+            // Container(
+            //     alignment: Alignment.centerLeft,
+            //     padding: EdgeInsets.only(top: 100, left: 50),
+            //     child:
+            //         Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+            //       Image.asset('assets/images/flutter_onboarding_1.png'),
+            //     ])),
           ])),
       Container(
           alignment: Alignment.bottomRight,
-          padding: EdgeInsets.only(bottom: 225, left: 1),
+
+          padding: EdgeInsets.only(
+            bottom: 215,
+            left: 10,
+          ),
+
           child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
             /*TextButton(
                 child: Text("Get Started ",
@@ -80,21 +92,21 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
           ])),
       Container(
           alignment: Alignment.bottomCenter,
-          padding: EdgeInsets.only(top: 450, right: 200, left: 30.5),
+          padding: EdgeInsets.only(top: 400, right: 200, left: 30.5),
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
             Text("Sickle Cell",
                 style: TextStyle(
-                    fontSize: 30,
+                    fontSize: 34,
                     color: Palette.moderateRed,
                     fontWeight: FontWeight.bold)),
             new Text("Foundation of",
                 style: TextStyle(
-                    fontSize: 22,
+                    fontSize: 25,
                     color: Palette.moderateRed,
                     fontWeight: FontWeight.normal)),
             new Text("Alberta",
                 style: TextStyle(
-                    fontSize: 22,
+                    fontSize: 25,
                     color: Palette.moderateRed,
                     fontWeight: FontWeight.normal)),
             /*TextButton(
