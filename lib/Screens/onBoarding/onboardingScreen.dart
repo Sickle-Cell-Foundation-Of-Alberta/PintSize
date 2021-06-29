@@ -57,7 +57,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
           ])),
       Container(
           alignment: Alignment.bottomRight,
-          padding: EdgeInsets.only(bottom: 225, left: 10),
+          padding: EdgeInsets.only(bottom: 225, left: 1),
           child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
             /*TextButton(
                 child: Text("Get Started ",

@@ -60,11 +60,15 @@ Widget _buildCard(String title, String description, context) {
                 color: Colors.white),
             child: Column(children: [
               SizedBox(height: 1.0),
-              Text(title,
-                  style: TextStyle(
-                      color: Color(0xFFCC8053),
-                      fontFamily: 'Varela',
-                      fontSize: 14.0)),
+              Padding(
+                padding: const EdgeInsets.only(top: 60),
+                child: Text(title,
+                    style: TextStyle(
+                        color: Color(0xFFCC8053),
+                        fontFamily: 'Varela',
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold)),
+              ),
             ])),
       ));
 }
