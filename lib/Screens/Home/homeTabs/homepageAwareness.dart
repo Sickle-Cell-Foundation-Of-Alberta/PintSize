@@ -61,6 +61,7 @@ Widget _buildCard(String title, String description, context) {
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               SizedBox(height: 1.0),
+
               Align(
                 alignment: Alignment.center,
                 child: Text(title,
@@ -70,6 +71,7 @@ Widget _buildCard(String title, String description, context) {
                         color: Color(0xFFCC8053),
                         fontFamily: 'Varela',
                         fontSize: 14.0)),
+
               ),
             ])),
       ));
