@@ -58,13 +58,21 @@ Widget _buildCard(String title, String description, context) {
                       blurRadius: 5.0)
                 ],
                 color: Colors.white),
-            child: Column(children: [
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               SizedBox(height: 1.0),
-              Text(title,
-                  style: TextStyle(
-                      color: Color(0xFFCC8053),
-                      fontFamily: 'Varela',
-                      fontSize: 14.0)),
+
+              Align(
+                alignment: Alignment.center,
+                child: Text(title,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFFCC8053),
+                        fontFamily: 'Varela',
+                        fontSize: 14.0)),
+
+              ),
             ])),
       ));
 }
