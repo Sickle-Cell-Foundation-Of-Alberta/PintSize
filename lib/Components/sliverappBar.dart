@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pintsize/Screens/Home/homeTabs/homepageDonation.dart';
 
 class PortfolioSliverAppBar extends StatelessWidget {
   final String _title;
@@ -114,7 +115,8 @@ class PortfolioSliverAppBar extends StatelessWidget {
                                                 BorderRadius.circular(18.0),
                                             side: BorderSide(color: Colors.red)))),
                                 icon: Icon(Icons.bloodtype_outlined, size: 17),
-                                onPressed: () => null,
+                                onPressed: () => Navigator.push(context,
+                                MaterialPageRoute(builder: (context) => DonationScreen()))
                               ),
                             ),
                             SizedBox(
