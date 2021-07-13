@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pintsize/Screens/Donations/homepageDonation.dart';
 import 'package:pintsize/Widgets/bottomNav/bottomBar.dart';
 
 class HomeAwarenessSubPage extends StatelessWidget {
@@ -31,19 +32,20 @@ class HomeAwarenessSubPage extends StatelessWidget {
         ],
       ),
       body: ListView(children: [
-        SizedBox(height: 15.0),
-        SizedBox(height: 20.0),
-       // Center(
+        //SizedBox(height: 15.0),
+        //SizedBox(height: 20.0),
+        // Center(
         //  child: Text(documentTitle,
-         //     style: TextStyle(
-          //        fontFamily: 'Varela',
-           //       fontSize: 22.0,
-           //       fontWeight: FontWeight.bold,
-            //      color: Color(0xFFF17532))),
-       // ),
-        SizedBox(height: 10.0),
+        //     style: TextStyle(
+        //        fontFamily: 'Varela',
+        //       fontSize: 22.0,
+        //       fontWeight: FontWeight.bold,
+        //      color: Color(0xFFF17532))),
+        // ),
+        SizedBox(height: 45.0),
         Center(
-          child: Padding(padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
+            child: Padding(
+          padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
           child: Text(documentDescription,
               style: TextStyle(
                   color: Colors.black, fontFamily: 'Varela', fontSize: 24.0)),
@@ -52,7 +54,10 @@ class HomeAwarenessSubPage extends StatelessWidget {
       ]),
       backgroundColor: Color(0xFFFCFAF8),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => DonationScreen()));
+        },
         backgroundColor: Colors.red,
         child: Icon(Icons.bloodtype_outlined),
       ),

@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:pintsize/Screens/Home/subPages/awareness.dart';
+import 'package:pintsize/Screens/News/subPages/news.dart';
 
 class NewsPage extends StatelessWidget {
   @override
@@ -44,7 +45,7 @@ Widget _buildCard(String title, String description, context) {
       child: InkWell(
         onTap: () {
           Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => HomeAwarenessSubPage(
+              builder: (context) => NewsSubPage(
                   documentTitle: title, documentDescription: description)));
         },
         child: Container(
