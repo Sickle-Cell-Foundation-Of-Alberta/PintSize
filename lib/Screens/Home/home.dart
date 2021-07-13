@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pintsize/Components/SliverHeader.dart';
 import 'package:pintsize/Components/sliverappBar.dart';
-import 'package:pintsize/Screens/Home/homeTabs/homepageDonation.dart';
+import 'package:pintsize/Screens/Donations/homepageDonation.dart';
 import 'package:pintsize/Screens/Home/subPages/awareness.dart';
 import 'package:pintsize/Screens/Home/subPages/dailyTips.dart';
 import 'package:pintsize/Screens/Home/subPages/mythsFacts.dart';
@@ -79,8 +79,10 @@ class _HomeScreenState extends State<HomeScreen>
                   ],
                 ))),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {Navigator.push(context,
-                                MaterialPageRoute(builder: (context) => DonationScreen()));},
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => DonationScreen()));
+          },
           backgroundColor: Colors.red,
           child: Icon(Icons.bloodtype_outlined),
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pintsize/Screens/Donations/homepageDonation.dart';
 import 'package:pintsize/Widgets/bottomNav/bottomBar.dart';
 
 class HomeResourcesSubPage extends StatelessWidget {
@@ -33,17 +34,18 @@ class HomeResourcesSubPage extends StatelessWidget {
       body: ListView(children: [
         SizedBox(height: 15.0),
         SizedBox(height: 20.0),
-       // Center(
-       //   child: Text(documentTitle,
+        // Center(
+        //   child: Text(documentTitle,
         //      style: TextStyle(
-         //         fontFamily: 'Varela',
-          //        fontSize: 22.0,
-           //       fontWeight: FontWeight.bold,
-           //       color: Color(0xFFF17532))),
-       // ),
+        //         fontFamily: 'Varela',
+        //        fontSize: 22.0,
+        //       fontWeight: FontWeight.bold,
+        //       color: Color(0xFFF17532))),
+        // ),
         SizedBox(height: 10.0),
         Center(
-         child: Padding(padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
+            child: Padding(
+          padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
           child: Text(documentDescription,
               style: TextStyle(
                   color: Color(0xFF575E67),
@@ -53,7 +55,10 @@ class HomeResourcesSubPage extends StatelessWidget {
         SizedBox(height: 20.0),
       ]),
       floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => DonationScreen()));
+          },
           backgroundColor: Colors.red,
           child: Icon(Icons.bloodtype_outlined)),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pintsize/Components/sliverappBar.dart';
+import 'package:pintsize/Screens/Donations/homepageDonation.dart';
 import 'package:pintsize/Screens/News/newsTab/homepageNews.dart';
 import 'package:pintsize/Widgets/bottomNav/bottomBar.dart';
 import 'package:tuple/tuple.dart';
@@ -51,7 +52,11 @@ class _NewsScreenState extends State<NewsScreen>
                   ],
                 ))),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            print('yes');
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => DonationScreen()));
+          },
           backgroundColor: Colors.red,
           child: Icon(Icons.bloodtype_outlined),
         ),
@@ -60,4 +65,4 @@ class _NewsScreenState extends State<NewsScreen>
   }
 }
 
-class MythsFactsPage {}
+//class MythsFactsPage {}

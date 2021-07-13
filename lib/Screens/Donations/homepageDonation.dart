@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:pintsize/Components/SliverHeader.dart';
 import 'package:pintsize/Components/silverappBarDonation.dart';
-import 'package:pintsize/Screens/Home/homeTabs/donationCards.dart';
+import 'package:pintsize/Screens/Donations/donationCards.dart';
 import 'package:pintsize/Screens/Home/homeTabs/homepageDailyTips.dart';
-import 'package:pintsize/Screens/Home/subPages/donateBlood.dart';
-import 'package:pintsize/Screens/Home/subPages/donateMoney.dart';
+import 'package:pintsize/Screens/Donations/donateBlood.dart';
+import 'package:pintsize/Screens/Donations/donateMoney.dart';
 import 'package:tuple/tuple.dart';
 import 'package:pintsize/Widgets/bottomNav/bottomBar.dart';
 import 'package:flutter/cupertino.dart';
 
-import 'homepageAwareness.dart';
+import '../Home/homeTabs/homepageAwareness.dart';
+
 class DonationScreen extends StatefulWidget {
   @override
   _DonationScreenState createState() => _DonationScreenState();
@@ -21,7 +22,6 @@ class _DonationScreenState extends State<DonationScreen>
   final List<Tuple2> _pages = [
     Tuple2('Donate blood', DonateBlood()),
     Tuple2('Donate money', DonateMoney()),
-  
   ];
 
   @override
@@ -61,16 +61,12 @@ class _DonationScreenState extends State<DonationScreen>
                     )))
               ];
             },
-   
             body: Container(
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
                 child: TabBarView(
                   controller: _tabController,
-                  children: [
-                   DonationCard(),
-                   DonateMoney()
-                  ],
+                  children: [DonationCard(), DonateMoney()],
                 ))),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
@@ -78,7 +74,6 @@ class _DonationScreenState extends State<DonationScreen>
           child: Icon(Icons.bloodtype_outlined),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        
         bottomNavigationBar: BottomBar());
   }
 }
