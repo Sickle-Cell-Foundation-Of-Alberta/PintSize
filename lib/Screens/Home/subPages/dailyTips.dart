@@ -9,7 +9,7 @@ class HomeDailyTipsSubPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.red,
         elevation: 0.0,
         centerTitle: true,
         leading: IconButton(
@@ -22,7 +22,7 @@ class HomeDailyTipsSubPage extends StatelessWidget {
             style: TextStyle(
                 fontFamily: 'Varela',
                 fontSize: 20.0,
-                color: Color(0xFF545D68))),
+                color: Color(0xFFFCFAF8))),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.notifications_none, color: Color(0xFF545D68)),
@@ -52,10 +52,9 @@ class HomeDailyTipsSubPage extends StatelessWidget {
         SizedBox(height: 20.0),
       ]),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: Color(0xFFF17532),
-        child: Icon(Icons.fast_forward),
-      ),
+          onPressed: () {},
+          backgroundColor: Colors.red,
+          child: Icon(Icons.bloodtype_outlined)),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomBar(),
     );
