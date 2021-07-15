@@ -1,10 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:pintsize/Screens/Home/subPages/awareness.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 class AwarenessPage extends StatelessWidget {
+  final databaseReference = FirebaseDatabase.instance.reference();
   @override
   Widget build(BuildContext context) {
+    readData();
     var size = MediaQuery.of(context).size;
 
     /*24 is for notification bar on Android*/
@@ -36,6 +39,16 @@ class AwarenessPage extends StatelessWidget {
       ),
     );
   }
+
+  void readData() {
+    databaseReference
+        .child(
+            '1wWNoeTvLN4SEQ02eKVYM94mLymsNMq-UB8Cx3AATunw/Cbs_Donoation_Data')
+        .once()
+        .then((DataSnapshot snapshot) {
+      print('Data : ${snapshot.value}');
+    });
+  }
 }
 
 Widget _buildCard(String title, String description, context) {
@@ -61,7 +74,6 @@ Widget _buildCard(String title, String description, context) {
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               SizedBox(height: 1.0),
-
               Align(
                 alignment: Alignment.center,
                 child: Text(title,
@@ -71,7 +83,6 @@ Widget _buildCard(String title, String description, context) {
                         color: Color(0xFFCC8053),
                         fontFamily: 'Varela',
                         fontSize: 14.0)),
-
               ),
             ])),
       ));
