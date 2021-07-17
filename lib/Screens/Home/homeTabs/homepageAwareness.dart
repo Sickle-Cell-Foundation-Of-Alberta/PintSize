@@ -10,6 +10,9 @@ class AwarenessPage extends StatelessWidget {
     readData();
     var size = MediaQuery.of(context).size;
 
+    var query = databaseReference.child('Awareness').orderByChild('id');
+    query.onChildAdded.forEach((event) => {print(event.snapshot.value)});
+
     /*24 is for notification bar on Android*/
     final double itemHeight = (size.height - kToolbarHeight - 24) / 2;
     final double itemWidth = size.width / 2;
@@ -19,6 +22,7 @@ class AwarenessPage extends StatelessWidget {
       body: new Container(
         child: StreamBuilder(
           stream:
+              // databaseReference.child("Awareness").onValue,
               FirebaseFirestore.instance.collection('Awareness').snapshots(),
           builder: (BuildContext context,
               AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
