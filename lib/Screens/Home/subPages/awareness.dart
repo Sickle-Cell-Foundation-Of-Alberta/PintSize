@@ -3,9 +3,10 @@ import 'package:pintsize/Screens/Donations/homepageDonation.dart';
 import 'package:pintsize/Widgets/bottomNav/bottomBar.dart';
 
 class HomeAwarenessSubPage extends StatelessWidget {
-  final documentTitle, documentDescription;
+  final documentTitle, documentDescription, documentSubtitle;
 
-  HomeAwarenessSubPage({this.documentTitle, this.documentDescription});
+  HomeAwarenessSubPage(
+      {this.documentTitle, this.documentDescription, this.documentSubtitle});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,17 +33,16 @@ class HomeAwarenessSubPage extends StatelessWidget {
         ],
       ),
       body: ListView(children: [
-        //SizedBox(height: 15.0),
-        //SizedBox(height: 20.0),
-        // Center(
-        //  child: Text(documentTitle,
-        //     style: TextStyle(
-        //        fontFamily: 'Varela',
-        //       fontSize: 22.0,
-        //       fontWeight: FontWeight.bold,
-        //      color: Color(0xFFF17532))),
-        // ),
         SizedBox(height: 45.0),
+        Center(
+          child: Text(documentSubtitle,
+              style: TextStyle(
+                  fontFamily: 'Varela',
+                  fontSize: 22.0,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFFF17532))),
+        ),
+        SizedBox(height: 15.0),
         Center(
             child: Padding(
           padding: EdgeInsets.fromLTRB(5, 5, 5, 5),

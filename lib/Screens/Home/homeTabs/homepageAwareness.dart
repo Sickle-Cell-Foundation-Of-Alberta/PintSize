@@ -28,8 +28,11 @@ class AwarenessPage extends StatelessWidget {
                         (MediaQuery.of(context).size.height / 5)),
                 itemBuilder: (BuildContext context, int index) {
                   final databaseQuery = snapshot.data!.docs[index].data();
-                  return _buildCard(databaseQuery['title'],
-                      databaseQuery['description'], context);
+                  return _buildCard(
+                      databaseQuery['title'],
+                      databaseQuery['description'],
+                      databaseQuery['subtitle'],
+                      context);
                 });
           },
         ),
@@ -38,7 +41,7 @@ class AwarenessPage extends StatelessWidget {
   }
 }
 
-Widget _buildCard(String title, String description, context) {
+Widget _buildCard(String title, String description, String subtitle, context) {
   return Padding(
       padding:
           EdgeInsets.only(top: 10.0, bottom: 15.0, left: 45.0, right: 45.0),
@@ -46,7 +49,10 @@ Widget _buildCard(String title, String description, context) {
         onTap: () {
           Navigator.of(context).push(MaterialPageRoute(
               builder: (context) => HomeAwarenessSubPage(
-                  documentTitle: title, documentDescription: description)));
+                    documentTitle: title,
+                    documentDescription: description,
+                    documentSubtitle: subtitle,
+                  )));
         },
         child: Container(
             decoration: BoxDecoration(
@@ -61,7 +67,6 @@ Widget _buildCard(String title, String description, context) {
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               SizedBox(height: 1.0),
-
               Align(
                 alignment: Alignment.center,
                 child: Text(title,
@@ -71,7 +76,6 @@ Widget _buildCard(String title, String description, context) {
                         color: Color(0xFFCC8053),
                         fontFamily: 'Varela',
                         fontSize: 14.0)),
-
               ),
             ])),
       ));
