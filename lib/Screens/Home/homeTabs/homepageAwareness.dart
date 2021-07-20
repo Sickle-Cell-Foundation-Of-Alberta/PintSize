@@ -28,8 +28,8 @@ class AwarenessPage extends StatelessWidget {
                         (MediaQuery.of(context).size.height / 5)),
                 itemBuilder: (BuildContext context, int index) {
                   final databaseQuery = snapshot.data!.docs[index].data();
-                  return _buildCard(databaseQuery['title'],
-                      databaseQuery['description'], context);
+                  return _buildCard(databaseQuery['Title'],
+                      databaseQuery['Description'], context);
                 });
           },
         ),
@@ -61,7 +61,6 @@ Widget _buildCard(String title, String description, context) {
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               SizedBox(height: 1.0),
-
               Align(
                 alignment: Alignment.center,
                 child: Text(title,
@@ -71,7 +70,6 @@ Widget _buildCard(String title, String description, context) {
                         color: Color(0xFFCC8053),
                         fontFamily: 'Varela',
                         fontSize: 14.0)),
-
               ),
             ])),
       ));

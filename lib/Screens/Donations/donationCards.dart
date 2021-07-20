@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:pintsize/Screens/Home/subPages/resources.dart';
+import 'package:pintsize/Screens/Home/subPages/dailyTips.dart';
 
-class ResourcePage extends StatelessWidget {
+class DonationCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -15,21 +15,21 @@ class ResourcePage extends StatelessWidget {
       backgroundColor: Color(0xFFFCFAF8),
       body: new Container(
         child: StreamBuilder(
-          stream:
-              FirebaseFirestore.instance.collection('Resources').snapshots(),
+          stream: FirebaseFirestore.instance
+              .collection('BloodDonation')
+              .snapshots(),
           builder: (BuildContext context,
               AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
             if (!snapshot.hasData) return const SizedBox.shrink();
             return GridView.builder(
                 itemCount: snapshot.data!.docs.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 1,
+                    crossAxisCount: 2,
                     childAspectRatio: MediaQuery.of(context).size.width /
-                        (MediaQuery.of(context).size.height / 5)),
+                        (MediaQuery.of(context).size.height / 2)),
                 itemBuilder: (BuildContext context, int index) {
                   final databaseQuery = snapshot.data!.docs[index].data();
-                  return _buildCard(databaseQuery['Title'],
-                      databaseQuery['Description'], context);
+                  return _buildCard(databaseQuery['title'], context);
                 });
           },
         ),
@@ -38,15 +38,15 @@ class ResourcePage extends StatelessWidget {
   }
 }
 
-Widget _buildCard(String title, String description, context) {
+Widget _buildCard(String title, context) {
   return Padding(
       padding:
-          EdgeInsets.only(top: 10.0, bottom: 15.0, left: 45.0, right: 45.0),
+          EdgeInsets.only(top: 10.0, bottom: 15.0, left: 25.0, right: 25.0),
       child: InkWell(
         onTap: () {
-          Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => HomeResourcesSubPage(
-                  documentTitle: title, documentDescription: description)));
+          //Navigator.of(context).push(MaterialPageRoute(
+          //builder: (context) => HomeDailyTipsSubPage(
+          //documentTitle: title, documentDescription: description)));
         },
         child: Container(
             decoration: BoxDecoration(
