@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pintsize/Screens/Donations/homepageDonation.dart';
+import 'package:share/share.dart';
 
 class PortfolioSliverAppBar extends StatelessWidget {
   final String _title;
@@ -118,30 +119,32 @@ class PortfolioSliverAppBar extends StatelessWidget {
                               ),
                               Expanded(
                                   child: ElevatedButton.icon(
-                                label: Text("Share".toUpperCase(),
-                                    style: TextStyle(fontSize: 14)),
-                                style: ButtonStyle(
-                                    padding:
-                                        MaterialStateProperty.all<EdgeInsets>(
-                                            EdgeInsets.all(10)),
-                                    foregroundColor:
-                                        MaterialStateProperty.all<Color>(
-                                            Colors.black),
-                                    backgroundColor:
-                                        MaterialStateProperty.all<Color>(
-                                            Colors.white),
-                                    shape: MaterialStateProperty.all<
-                                            RoundedRectangleBorder>(
-                                        RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(18.0),
-                                            side: BorderSide(color: Colors.red)))),
-                                icon: Icon(
-                                  Icons.file_upload_outlined,
-                                  size: 17,
-                                ),
-                                onPressed: () => null,
-                              )),
+                                      label: Text("Share".toUpperCase(),
+                                          style: TextStyle(fontSize: 14)),
+                                      style: ButtonStyle(
+                                          padding: MaterialStateProperty.all<
+                                              EdgeInsets>(EdgeInsets.all(10)),
+                                          foregroundColor:
+                                              MaterialStateProperty.all<Color>(
+                                                  Colors.black),
+                                          backgroundColor:
+                                              MaterialStateProperty.all<Color>(
+                                                  Colors.white),
+                                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                              RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(18.0),
+                                                  side: BorderSide(color: Colors.red)))),
+                                      icon: Icon(
+                                        Icons.file_upload_outlined,
+                                        size: 17,
+                                      ),
+                                      onPressed: () {
+                                        Share.share(
+                                            'follow us on social media @ourscfa',
+                                            subject: 'Look what I made!');
+                                        print('pass');
+                                      })),
                             ],
                           ),
                         ),
