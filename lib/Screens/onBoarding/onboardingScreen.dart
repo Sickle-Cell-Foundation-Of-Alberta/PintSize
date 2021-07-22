@@ -82,10 +82,13 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
                             borderRadius: BorderRadius.circular(18.0),
                             side: BorderSide(color: Palette.moderateRed)))),
                 onPressed: () => goToHome(context)),*/
-            Image.asset(
-              'assets/Frame.png',
-              width: 200,
-              height: 150,
+            Padding(
+              padding: const EdgeInsets.fromLTRB( 0, 350, 0,0),
+              child: Image.asset(
+                'assets/logo.png',
+                width: 200,
+               height:300,
+              ),
             )
           ])),
       Container(
