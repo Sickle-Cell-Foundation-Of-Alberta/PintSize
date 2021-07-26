@@ -40,9 +40,8 @@ class NewsPage extends StatelessWidget {
 
 Widget _buildCard(String title, String description, context) {
   return Padding(
-      padding:
-          EdgeInsets.only(top: 10.0, bottom: 15.0, left: 45.0, right: 45.0),
-      child: InkWell(
+    padding: EdgeInsets.only(top: 10.0, bottom: 15.0, left: 45.0, right: 45.0),
+    child: InkWell(
         onTap: () {
           Navigator.of(context).push(MaterialPageRoute(
               builder: (context) => NewsSubPage(
@@ -58,13 +57,19 @@ Widget _buildCard(String title, String description, context) {
                       blurRadius: 5.0)
                 ],
                 color: Colors.white),
-            child: Column(children: [
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               SizedBox(height: 1.0),
-              Text(title,
-                  style: TextStyle(
-                      color: Color(0xFFCC8053),
-                      fontFamily: 'Varela',
-                      fontSize: 14.0)),
-            ])),
-      ));
+              Align(
+                alignment: Alignment.center,
+                child: Text(title,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFFCC8053),
+                        fontFamily: 'Varela',
+                        fontSize: 14.0)),
+              ),
+            ]))),
+  );
 }
