@@ -24,12 +24,12 @@ class HomeDailyTipsSubPage extends StatelessWidget {
                 fontFamily: 'Varela',
                 fontSize: 20.0,
                 color: Color(0xFFFCFAF8))),
-        actions: <Widget>[
+        /* actions: <Widget>[
           IconButton(
             icon: Icon(Icons.notifications_none, color: Color(0xFF545D68)),
             onPressed: () {},
           ),
-        ],
+        ],*/
       ),
       body: ListView(children: [
         SizedBox(height: 15.0),

@@ -34,13 +34,13 @@ class BottomBar extends StatelessWidget {
                             ),
                             onPressed: () => goToHome(context),
                           ),
-                          IconButton(
+                          /*IconButton(
                             icon: new Icon(
                               Icons.feed_outlined,
                               color: Color(0xFF676E79),
                             ),
                             onPressed: () => goToNews(context),
-                          ),
+                          ),*/
                         ],
                       )),
                   Container(
@@ -49,19 +49,26 @@ class BottomBar extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
-                          IconButton(
+                          /*IconButton(
                             icon: new Icon(
                               Icons.volunteer_activism_outlined,
                               color: Color(0xFF676E79),
                             ),
                             onPressed: () {},
-                          ),
-                          IconButton(
+                          ),*/
+                          /*IconButton(
                             icon: new Icon(
                               Icons.person_outlined,
                               color: Color(0xFF676E79),
                             ),
                             onPressed: () {},
+                          ),*/
+                          IconButton(
+                            icon: new Icon(
+                              Icons.feed_outlined,
+                              color: Color(0xFF676E79),
+                            ),
+                            onPressed: () => goToNews(context),
                           ),
                         ],
                       )),

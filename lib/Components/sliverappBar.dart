@@ -141,8 +141,8 @@ class PortfolioSliverAppBar extends StatelessWidget {
                                       ),
                                       onPressed: () {
                                         Share.share(
-                                            'follow us on social media @ourscfa',
-                                            subject: 'Look what I made!');
+                                            'Together we can make a difference in the lives of those living with Sickle Cell Disease',
+                                            subject: 'Help End Sickle Cell');
                                         print('pass');
                                       })),
                             ],
