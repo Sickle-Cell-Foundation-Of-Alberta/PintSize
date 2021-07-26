@@ -23,13 +23,13 @@ class MythFactsPage extends StatelessWidget {
             return GridView.builder(
                 itemCount: snapshot.data!.docs.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
+                    crossAxisCount: 1,
                     childAspectRatio: MediaQuery.of(context).size.width /
-                        (MediaQuery.of(context).size.height / 2)),
+                        (MediaQuery.of(context).size.height / 5)),
                 itemBuilder: (BuildContext context, int index) {
                   final databaseQuery = snapshot.data!.docs[index].data();
-                  return _buildCard(databaseQuery['title'],
-                      databaseQuery['description'], context);
+                  return _buildCard(databaseQuery['Title'],
+                      databaseQuery['Description'], context);
                 });
           },
         ),
