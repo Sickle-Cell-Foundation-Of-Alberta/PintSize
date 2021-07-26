@@ -28,11 +28,8 @@ class AwarenessPage extends StatelessWidget {
                         (MediaQuery.of(context).size.height / 5)),
                 itemBuilder: (BuildContext context, int index) {
                   final databaseQuery = snapshot.data!.docs[index].data();
-                  return _buildCard(
-                      databaseQuery['title'],
-                      databaseQuery['description'],
-                      databaseQuery['subtitle'],
-                      context);
+                  return _buildCard(databaseQuery['Title'],
+                      databaseQuery['Description'], context);
                 });
           },
         ),
@@ -41,7 +38,7 @@ class AwarenessPage extends StatelessWidget {
   }
 }
 
-Widget _buildCard(String title, String description, String subtitle, context) {
+Widget _buildCard(String title, String description, context) {
   return Padding(
       padding:
           EdgeInsets.only(top: 10.0, bottom: 15.0, left: 45.0, right: 45.0),
@@ -49,10 +46,7 @@ Widget _buildCard(String title, String description, String subtitle, context) {
         onTap: () {
           Navigator.of(context).push(MaterialPageRoute(
               builder: (context) => HomeAwarenessSubPage(
-                    documentTitle: title,
-                    documentDescription: description,
-                    documentSubtitle: subtitle,
-                  )));
+                  documentTitle: title, documentDescription: description)));
         },
         child: Container(
             decoration: BoxDecoration(
