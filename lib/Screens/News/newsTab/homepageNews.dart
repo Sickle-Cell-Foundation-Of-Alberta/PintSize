@@ -27,8 +27,8 @@ class NewsPage extends StatelessWidget {
                         (MediaQuery.of(context).size.height / 5)),
                 itemBuilder: (BuildContext context, int index) {
                   final databaseQuery = snapshot.data!.docs[index].data();
-                  return _buildCard(databaseQuery['title'],
-                      databaseQuery['description'], context);
+                  return _buildCard(databaseQuery['Title'],
+                      databaseQuery['Description'], context);
                 });
           },
         ),
