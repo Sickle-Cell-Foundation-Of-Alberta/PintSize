@@ -45,16 +45,16 @@ class HomeAwarenessSubPage extends StatelessWidget {
         Center(
           child: Text(documentDescription,
               style: TextStyle(
-                  color: Colors.black, fontFamily: 'Varela', fontSize: 24.0)),
+                  color: Color(0xFF575E67),
+                  fontFamily: 'Varela',
+                  fontSize: 24.0)),
         ),
         SizedBox(height: 20.0),
       ]),
-      backgroundColor: Color(0xFFFCFAF8),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: Colors.red,
-        child: Icon(Icons.bloodtype_outlined),
-      ),
+          onPressed: () {},
+          backgroundColor: Colors.red,
+          child: Icon(Icons.bloodtype_outlined)),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomBar(),
     );
