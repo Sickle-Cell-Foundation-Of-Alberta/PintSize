@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:pintsize/Widgets/bottomNav/bottomBar.dart';
 
-class HomeResourcesSubPage extends StatelessWidget {
+class NotificationSubPage extends StatelessWidget {
   final documentTitle, documentDescription;
 
-  HomeResourcesSubPage({this.documentTitle, this.documentDescription});
+  NotificationSubPage({this.documentTitle, this.documentDescription});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.white,
         elevation: 0.0,
         centerTitle: true,
-        title: Text("Resources",
+        title: Text("News",
             style: TextStyle(
                 fontFamily: 'Varela',
                 fontSize: 20.0,
-                color: Color(0xFFFCFAF8))),
+                color: Color(0xFF545D68))),
       ),
       body: ListView(children: [
         SizedBox(height: 15.0),
@@ -40,9 +40,10 @@ class HomeResourcesSubPage extends StatelessWidget {
         SizedBox(height: 20.0),
       ]),
       floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          backgroundColor: Colors.red,
-          child: Icon(Icons.bloodtype_outlined)),
+        onPressed: () {},
+        backgroundColor: Color(0xFFF17532),
+        child: Icon(Icons.fast_forward),
+      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomBar(),
     );

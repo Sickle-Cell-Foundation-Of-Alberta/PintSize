@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pintsize/Screens/Home/home.dart';
 import 'package:pintsize/Screens/News/news.dart';
+import 'package:pintsize/Screens/Notification/notification.dart';
 
 class BottomBar extends StatelessWidget {
   @override
@@ -58,17 +59,29 @@ class BottomBar extends StatelessWidget {
                           ),
                           IconButton(
                             icon: new Icon(
-                              Icons.person_outlined,
+                              Icons.notifications_none,
                               color: Color(0xFF676E79),
                             ),
-                            onPressed: () {},
+                            onPressed: () => goToNotifications(context),
                           ),
                         ],
                       )),
                 ])));
   }
 
-  void goToHome(context) => Navigator.pushReplacementNamed(context, "/home");
+  void goToHome(context) => Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (BuildContext context) => HomeScreen()),
+      ModalRoute.withName('/'));
 
-  void goToNews(context) => Navigator.pushReplacementNamed(context, "/news");
+  void goToNews(context) => Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (BuildContext context) => NewsScreen()),
+      ModalRoute.withName('/'));
+
+  void goToNotifications(context) => Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(
+          builder: (BuildContext context) => NotificationScreen()),
+      ModalRoute.withName('/'));
 }

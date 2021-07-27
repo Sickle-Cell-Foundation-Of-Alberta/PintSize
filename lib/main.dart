@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:pintsize/Screens/News/news.dart';
 
 import 'Screens/Home/home.dart';
+import 'Screens/Notification/notification.dart';
 import 'Screens/onBoarding/onboardingScreen.dart';
 
 int? initScreen;
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
           '/home': (context) => HomeScreen(),
           '/news': (context) => NewsScreen(),
           // '/donate': (context) => HomeScreen(),
-          // '/profile': (context) => HomeScreen(),
+          // '/notification': (context) => NotificationScreen(),
         });
   }
 }
