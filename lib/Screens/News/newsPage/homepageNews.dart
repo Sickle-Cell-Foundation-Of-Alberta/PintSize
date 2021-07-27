@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:pintsize/Screens/Home/subPages/awareness.dart';
-import 'package:pintsize/Screens/News/subPages/news.dart';
+import 'package:pintsize/Screens/News/subPage/news.dart';
 
 class NewsPage extends StatelessWidget {
   @override
