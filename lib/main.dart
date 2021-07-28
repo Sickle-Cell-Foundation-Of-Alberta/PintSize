@@ -5,6 +5,7 @@ import 'package:pintsize/Screens/News/news.dart';
 
 import 'Screens/Donations/homepageDonation.dart';
 import 'Screens/Home/home.dart';
+import 'Screens/Notification/notification.dart';
 import 'Screens/onBoarding/onboardingScreen.dart';
 
 int? initScreen;
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
           '/home': (context) => HomeScreen(),
           '/news': (context) => NewsScreen(),
           '/donate': (context) => DonationScreen(),
-          // '/profile': (context) => HomeScreen(),
+          '/notification': (context) => NotificationScreen(),
         });
   }
 }
