@@ -64,12 +64,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
           ])),
       Container(
           alignment: Alignment.bottomRight,
-
           padding: EdgeInsets.only(
-            bottom: 215,
-            left: 10,
+            bottom: 235,
+            left: 30,
           ),
-
           child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
             /*TextButton(
                 child: Text("Get Started ",
@@ -92,7 +90,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
           ])),
       Container(
           alignment: Alignment.bottomCenter,
-          padding: EdgeInsets.only(top: 400, right: 200, left: 30.5),
+          padding: EdgeInsets.only(top: 450, right: 140, left: 10),
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
             Text("Sickle Cell",
                 style: TextStyle(

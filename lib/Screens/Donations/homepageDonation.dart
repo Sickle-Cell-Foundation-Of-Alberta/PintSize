@@ -1,31 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:pintsize/Components/SliverHeader.dart';
-import 'package:pintsize/Components/sliverappBar.dart';
-import 'package:pintsize/Screens/Donations/homepageDonation.dart';
-import 'package:pintsize/Screens/Home/subPages/awareness.dart';
-import 'package:pintsize/Screens/Home/subPages/dailyTips.dart';
-import 'package:pintsize/Screens/Home/subPages/mythsFacts.dart';
-import 'package:pintsize/Screens/Home/subPages/resources.dart';
-import 'package:pintsize/Widgets/bottomNav/bottomBar.dart';
+import 'package:pintsize/Components/silverappBarDonation.dart';
+import 'package:pintsize/Screens/Donations/donationCards.dart';
+import 'package:pintsize/Screens/Home/homeTabs/homepageDailyTips.dart';
+import 'package:pintsize/Screens/Donations/donateBlood.dart';
+import 'package:pintsize/Screens/Donations/donateMoney.dart';
 import 'package:tuple/tuple.dart';
-import 'homeTabs/homepageAwareness.dart';
-import 'homeTabs/homepageDailyTips.dart';
-import 'homeTabs/homepageMythsFacts.dart';
-import 'homeTabs/homepageResources.dart';
+import 'package:pintsize/Widgets/bottomNav/bottomBar.dart';
+import 'package:flutter/cupertino.dart';
 
-class HomeScreen extends StatefulWidget {
+import '../Home/homeTabs/homepageAwareness.dart';
+
+class DonationScreen extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _DonationScreenState createState() => _DonationScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen>
+class _DonationScreenState extends State<DonationScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
   final List<Tuple2> _pages = [
-    Tuple2('Awareness', HomeAwarenessSubPage()),
-    Tuple2('Daily Tips', HomeDailyTipsSubPage()),
-    Tuple2('Resources', HomeResourcesSubPage()),
-    Tuple2('Myths & Facts', HomeMythsnFactsSubPage())
+    Tuple2('Donate blood', DonateBlood()),
+    Tuple2('Donate money', DonateMoney()),
   ];
 
   @override
@@ -70,18 +66,10 @@ class _HomeScreenState extends State<HomeScreen>
                 width: MediaQuery.of(context).size.width,
                 child: TabBarView(
                   controller: _tabController,
-                  children: [
-                    AwarenessPage(),
-                    DailyTipsPage(),
-                    ResourcePage(),
-                    MythFactsPage(),
-                  ],
+                  children: [DonationCard(), DonateMoney()],
                 ))),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => DonationScreen()));
-          },
+          onPressed: () {},
           backgroundColor: Colors.red,
           child: Icon(Icons.bloodtype_outlined),
         ),

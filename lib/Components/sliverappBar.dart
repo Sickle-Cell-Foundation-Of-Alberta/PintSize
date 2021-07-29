@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pintsize/Screens/Donations/homepageDonation.dart';
 
 class PortfolioSliverAppBar extends StatelessWidget {
   final String _title;
@@ -96,30 +97,22 @@ class PortfolioSliverAppBar extends StatelessWidget {
                             children: <Widget>[
                               Expanded(
                                 child: ElevatedButton.icon(
-                                  label: Text("Donate".toUpperCase(),
-                                      style: TextStyle(fontSize: 14)),
-                                  style: ButtonStyle(
-                                      padding:
-                                          MaterialStateProperty.all<EdgeInsets>(
-                                              EdgeInsets.all(10)),
-                                      foregroundColor:
-                                          MaterialStateProperty.all<Color>(
-                                              Colors.black),
-                                      backgroundColor:
-                                          MaterialStateProperty.all<Color>(
-                                              Colors.white),
-                                      shape: MaterialStateProperty.all<
-                                              RoundedRectangleBorder>(
-                                          RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(18.0),
-                                              side: BorderSide(color: Colors.red)))),
-                                  // side: BorderSide(
-                                  //     color: Colors.black)))),
-                                  icon:
-                                      Icon(Icons.bloodtype_outlined, size: 17),
-                                  onPressed: () => null,
-                                ),
+                                    label: Text("Donate".toUpperCase(),
+                                        style: TextStyle(fontSize: 14)),
+                                    style: ButtonStyle(
+                                        padding: MaterialStateProperty.all<EdgeInsets>(
+                                            EdgeInsets.all(10)),
+                                        foregroundColor: MaterialStateProperty.all<Color>(
+                                            Colors.black),
+                                        backgroundColor:
+                                            MaterialStateProperty.all<Color>(
+                                                Colors.white),
+                                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                            RoundedRectangleBorder(
+                                                borderRadius: BorderRadius.circular(18.0),
+                                                side: BorderSide(color: Colors.red)))),
+                                    icon: Icon(Icons.bloodtype_outlined, size: 17),
+                                    onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => DonationScreen()))),
                               ),
                               SizedBox(
                                 width: 20,

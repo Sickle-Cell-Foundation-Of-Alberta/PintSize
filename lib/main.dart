@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:pintsize/Screens/News/news.dart';
+import 'Screens/Donations/homepageDonation.dart';
 import 'Screens/Home/home.dart';
 import 'Screens/Notification/notification.dart';
 import 'Screens/onBoarding/onboardingScreen.dart';
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
           '/': (context) => OnBoardingScreen(),
           '/home': (context) => HomeScreen(),
           '/news': (context) => NewsScreen(),
-          // '/donate': (context) => HomeScreen(),
+          '/donate': (context) => DonationScreen(),
           '/notification': (context) => NotificationScreen(),
         });
   }
