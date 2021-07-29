@@ -69,7 +69,7 @@ Widget _buildCard(String title, String description, context) {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: Color(0xFFCC8053),
+                        color: Color(0xFFba5249),
                         fontFamily: 'Varela',
                         fontSize: 14.0)),
               ),

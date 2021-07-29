@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pintsize/Components/SliverHeader.dart';
 import 'package:pintsize/Components/sliverappBar.dart';
-import 'package:pintsize/Screens/Donations/homepageDonation.dart';
+import 'package:pintsize/Screens/Donations/donation.dart';
 import 'package:pintsize/Screens/Home/subPages/awareness.dart';
 import 'package:pintsize/Screens/Home/subPages/dailyTips.dart';
 import 'package:pintsize/Screens/Home/subPages/mythsFacts.dart';

@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:pintsize/Components/SliverHeader.dart';
 import 'package:pintsize/Components/silverappBarDonation.dart';
-import 'package:pintsize/Screens/Donations/donationCards.dart';
-import 'package:pintsize/Screens/Home/homeTabs/homepageDailyTips.dart';
-import 'package:pintsize/Screens/Donations/donateBlood.dart';
-import 'package:pintsize/Screens/Donations/donateMoney.dart';
+import 'package:pintsize/Screens/Donations/subPage/bloodDonation.dart';
 import 'package:tuple/tuple.dart';
 import 'package:pintsize/Widgets/bottomNav/bottomBar.dart';
 import 'package:flutter/cupertino.dart';
-
-import '../Home/homeTabs/homepageAwareness.dart';
+import 'donationTabs/homepageDonateBlood.dart';
+import 'donationTabs/homepageDonateMoney.dart';
 
 class DonationScreen extends StatefulWidget {
   @override
@@ -20,8 +17,8 @@ class _DonationScreenState extends State<DonationScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
   final List<Tuple2> _pages = [
-    Tuple2('Donate blood', DonateBlood()),
-    Tuple2('Donate money', DonateMoney()),
+    Tuple2('Donate Blood', BloodDonationSubPage()),
+    Tuple2('Donate Money', DonateMoney()),
   ];
 
   @override
@@ -51,7 +48,7 @@ class _DonationScreenState extends State<DonationScreen>
                     delegate: SliverPresistentHeader(
                         tabBar: TabBar(
                       controller: _tabController,
-                      isScrollable: true,
+                      isScrollable: false,
                       labelColor: Color(0xFFC88D67),
                       indicatorColor: Color(0xFFC88D67),
                       unselectedLabelColor: Color(0xFFCDCDCD),
@@ -66,10 +63,13 @@ class _DonationScreenState extends State<DonationScreen>
                 width: MediaQuery.of(context).size.width,
                 child: TabBarView(
                   controller: _tabController,
-                  children: [DonationCard(), DonateMoney()],
+                  children: [DonateBlood(), DonateMoney()],
                 ))),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => DonationScreen()));
+          },
           backgroundColor: Colors.red,
           child: Icon(Icons.bloodtype_outlined),
         ),
