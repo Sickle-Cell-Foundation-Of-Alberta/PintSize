@@ -21,6 +21,7 @@ class PortfolioSliverAppBar extends StatelessWidget {
       // snap: true,
       elevation: 40,
       backgroundColor: Colors.red,
+      // backgroundColor: Color(0xFFb8534c),
       flexibleSpace: Container(
         child: FlexibleSpaceBar(
           centerTitle: true,
@@ -113,6 +114,8 @@ class PortfolioSliverAppBar extends StatelessWidget {
                                               borderRadius:
                                                   BorderRadius.circular(18.0),
                                               side: BorderSide(color: Colors.red)))),
+                                  // side: BorderSide(
+                                  //     color: Colors.black)))),
                                   icon:
                                       Icon(Icons.bloodtype_outlined, size: 17),
                                   onPressed: () => null,
@@ -141,6 +144,8 @@ class PortfolioSliverAppBar extends StatelessWidget {
                                             borderRadius:
                                                 BorderRadius.circular(18.0),
                                             side: BorderSide(color: Colors.red)))),
+                                // side: BorderSide(
+                                //     color: Colors.black)))),
                                 icon: Icon(
                                   Icons.file_upload_outlined,
                                   size: 17,

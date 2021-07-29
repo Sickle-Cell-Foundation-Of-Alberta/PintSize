@@ -10,13 +10,14 @@ class AwarenessPage extends StatelessWidget {
     /*24 is for notification bar on Android*/
     final double itemHeight = (size.height - kToolbarHeight - 24) / 2;
     final double itemWidth = size.width / 2;
-
     return Scaffold(
       backgroundColor: Color(0xFFFCFAF8),
       body: new Container(
         child: StreamBuilder(
-          stream:
-              FirebaseFirestore.instance.collection('Awareness').snapshots(),
+          stream: FirebaseFirestore.instance
+              .collection('Awareness')
+              .orderBy('id')
+              .snapshots(),
           builder: (BuildContext context,
               AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
             if (!snapshot.hasData) return const SizedBox.shrink();
@@ -25,7 +26,7 @@ class AwarenessPage extends StatelessWidget {
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 1,
                     childAspectRatio: MediaQuery.of(context).size.width /
-                        (MediaQuery.of(context).size.height / 5)),
+                        (MediaQuery.of(context).size.height / 4)),
                 itemBuilder: (BuildContext context, int index) {
                   final databaseQuery = snapshot.data!.docs[index].data();
                   return _buildCard(databaseQuery['Title'],

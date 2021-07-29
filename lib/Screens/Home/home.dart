@@ -7,7 +7,6 @@ import 'package:pintsize/Screens/Home/subPages/mythsFacts.dart';
 import 'package:pintsize/Screens/Home/subPages/resources.dart';
 import 'package:pintsize/Widgets/bottomNav/bottomBar.dart';
 import 'package:tuple/tuple.dart';
-
 import 'homeTabs/homepageAwareness.dart';
 import 'homeTabs/homepageDailyTips.dart';
 import 'homeTabs/homepageMythsFacts.dart';
