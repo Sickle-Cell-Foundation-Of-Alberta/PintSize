@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:pintsize/Components/sliverappBar.dart';
 import 'package:pintsize/Screens/Donations/homepageDonation.dart';
-import 'package:pintsize/Screens/News/newsTab/homepageNews.dart';
+import 'package:pintsize/Screens/News/newsPage/homepageNews.dart';
 import 'package:pintsize/Widgets/bottomNav/bottomBar.dart';
 import 'package:tuple/tuple.dart';
 
-import 'subPages/news.dart';
+import 'subPage/news.dart';
 
 class NewsScreen extends StatefulWidget {
   @override
@@ -64,5 +64,3 @@ class _NewsScreenState extends State<NewsScreen>
         bottomNavigationBar: BottomBar());
   }
 }
-
-//class MythsFactsPage {}
