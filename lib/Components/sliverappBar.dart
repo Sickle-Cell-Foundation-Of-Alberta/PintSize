@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pintsize/Screens/Donations/homepageDonation.dart';
+import 'package:pintsize/Screens/Donations/donation.dart';
 
 class PortfolioSliverAppBar extends StatelessWidget {
   final String _title;
@@ -22,6 +22,7 @@ class PortfolioSliverAppBar extends StatelessWidget {
       // snap: true,
       elevation: 40,
       backgroundColor: Colors.red,
+      // backgroundColor: Color(0xFFb8534c),
       flexibleSpace: Container(
         child: FlexibleSpaceBar(
           centerTitle: true,
@@ -111,7 +112,7 @@ class PortfolioSliverAppBar extends StatelessWidget {
                                                 borderRadius: BorderRadius.circular(18.0),
                                                 side: BorderSide(color: Colors.red)))),
                                     icon: Icon(Icons.bloodtype_outlined, size: 17),
-                                    onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => DonationScreen()))),
+                                    onPressed: () => goToDonation(context)),
                               ),
                               SizedBox(
                                 width: 20,
@@ -136,6 +137,8 @@ class PortfolioSliverAppBar extends StatelessWidget {
                                             borderRadius:
                                                 BorderRadius.circular(18.0),
                                             side: BorderSide(color: Colors.red)))),
+                                // side: BorderSide(
+                                //     color: Colors.black)))),
                                 icon: Icon(
                                   Icons.file_upload_outlined,
                                   size: 17,
@@ -156,4 +159,9 @@ class PortfolioSliverAppBar extends StatelessWidget {
     //   ),
     // );
   }
+
+  void goToDonation(context) => Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (BuildContext context) => DonationScreen()),
+      ModalRoute.withName('/'));
 }
