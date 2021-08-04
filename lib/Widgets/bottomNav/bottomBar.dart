@@ -57,14 +57,13 @@ class BottomBar extends StatelessWidget {
                             ),
                             onPressed: () {},
                           ),*/
-                          /*IconButton(
+                          IconButton(
                             icon: new Icon(
                               Icons.notifications_none,
                               color: Color(0xFF676E79),
                             ),
-                            onPressed: () {},
                             onPressed: () => goToNotifications(context),
-                          ),*/
+                          ),
                           IconButton(
                             icon: new Icon(
                               Icons.feed_outlined,

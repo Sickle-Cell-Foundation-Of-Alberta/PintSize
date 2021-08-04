@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pintsize/Screens/Donations/homepageDonation.dart';
 import 'package:pintsize/Widgets/bottomNav/bottomBar.dart';
 
 class NotificationSubPage extends StatelessWidget {
@@ -9,14 +10,14 @@ class NotificationSubPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.red,
         elevation: 0.0,
         centerTitle: true,
-        title: Text("News",
+        title: Text("Post",
             style: TextStyle(
                 fontFamily: 'Varela',
                 fontSize: 20.0,
-                color: Color(0xFF545D68))),
+                color: Color(0xFFFCFAF8))),
       ),
       body: ListView(children: [
         SizedBox(height: 15.0),
@@ -33,16 +34,15 @@ class NotificationSubPage extends StatelessWidget {
         Center(
           child: Text(documentDescription,
               style: TextStyle(
-                  color: Color(0xFF575E67),
-                  fontFamily: 'Varela',
-                  fontSize: 24.0)),
+                  color: Colors.black, fontFamily: 'Varela', fontSize: 24.0)),
         ),
         SizedBox(height: 20.0),
       ]),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: Color(0xFFF17532),
-        child: Icon(Icons.fast_forward),
+        onPressed: () => Navigator.push(
+            context, MaterialPageRoute(builder: (context) => DonationScreen())),
+        backgroundColor: Colors.red,
+        child: Icon(Icons.bloodtype_outlined),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomBar(),
