@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
         title: title,
         debugShowCheckedModeBanner: false,
         theme: ThemeData(primaryColor: Colors.white),
-        initialRoute: isviewed == 0 || isviewed == null ? "/" : "/home",
+        initialRoute: "/",
         routes: {
           '/': (context) => OnBoardingScreen(),
           '/home': (context) => NewsScreen(),
