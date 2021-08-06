@@ -16,7 +16,7 @@ class DonateMoney extends StatelessWidget {
       body: new Container(
         child: StreamBuilder(
           stream: FirebaseFirestore.instance
-              .collection('Awareness')
+              .collection('Campaigns')
               .orderBy('id')
               .snapshots(),
           builder: (BuildContext context,

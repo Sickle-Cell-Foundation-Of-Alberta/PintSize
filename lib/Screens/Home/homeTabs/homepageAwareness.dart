@@ -75,3 +75,7 @@ Widget _buildCard(String title, String description, context) {
             ])),
       ));
 }
+
+
+
+// firebase.firestore().collection('elements').where('end', '>', new Date()).get();

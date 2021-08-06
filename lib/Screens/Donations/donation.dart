@@ -6,7 +6,7 @@ import 'package:tuple/tuple.dart';
 import 'package:pintsize/Widgets/bottomNav/bottomBar.dart';
 import 'package:flutter/cupertino.dart';
 import 'donationTabs/homepageDonateBlood.dart';
-import 'donationTabs/homepageDonateMoney.dart';
+import 'donationTabs/homepageCampaigns.dart';
 
 class DonationScreen extends StatefulWidget {
   @override
@@ -18,7 +18,7 @@ class _DonationScreenState extends State<DonationScreen>
   late TabController _tabController;
   final List<Tuple2> _pages = [
     Tuple2('Donate Blood', BloodDonationSubPage()),
-    Tuple2('Donate Money', DonateMoney()),
+    Tuple2('Upcoming Campaigns', DonateMoney()),
   ];
 
   @override
