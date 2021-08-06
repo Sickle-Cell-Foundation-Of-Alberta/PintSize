@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:pintsize/Screens/News/news.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'Screens/Charity/charity.dart';
 import 'Screens/Donations/donation.dart';
 import 'Screens/Home/home.dart';
 import 'Screens/Notification/notification.dart';
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
           '/news': (context) => NewsScreen(),
           '/donate': (context) => DonationScreen(),
           '/notification': (context) => NotificationScreen(),
+          '/charity': (context) => CharityScreen(),
         });
   }
 }
@@ -62,7 +64,7 @@ goToHome(context) => Navigator.pushAndRemoveUntil(
   //       theme: ThemeData(primaryColor: Colors.white),
   //       initialRoute: isviewed == 0 || isviewed == null ? "/" : "/home",
   //       routes: {
-  //         '/': (context) => OnBoardingScreen(),
+  //         '/': (context) => OnBoardingScreen(),`
   //         '/home': (context) => HomeScreen(),
   //         '/news': (context) => NewsScreen(),
   //         '/donate': (context) => DonationScreen(),
