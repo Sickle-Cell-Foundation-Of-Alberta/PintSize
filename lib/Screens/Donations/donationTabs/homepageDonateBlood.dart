@@ -10,13 +10,13 @@ class DonateBlood extends StatelessWidget {
     'Red Deer',
     'Beaumont',
     'Airdrie',
-    'Cochrane',
+    /*'Cochrane',
     'Okotoks',
     'Spruce Grove',
     'Devon',
     'Leduc',
     'Sherwood Park',
-    'St. Albert',
+    'St. Albert',*/
   ];
   @override
   Widget build(BuildContext context) {

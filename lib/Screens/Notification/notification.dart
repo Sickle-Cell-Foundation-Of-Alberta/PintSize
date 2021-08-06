@@ -1,19 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:pintsize/Components/SliverHeader.dart';
 import 'package:pintsize/Components/sliverappBar.dart';
-import 'package:pintsize/Screens/Donations/donationCards.dart';
-import 'package:pintsize/Screens/Donations/homepageDonation.dart';
-import 'package:pintsize/Screens/Home/homeTabs/homepageDailyTips.dart';
-import 'package:pintsize/Screens/Donations/donateBlood.dart';
-import 'package:pintsize/Screens/Donations/donateMoney.dart';
+import 'package:pintsize/Screens/Donations/donation.dart';
 import 'package:pintsize/Screens/Notification/notificationPage/About.dart';
 import 'package:pintsize/Screens/Notification/notificationPage/homepageNotification.dart';
 import 'package:pintsize/Screens/Notification/subPage/notification.dart';
 import 'package:tuple/tuple.dart';
 import 'package:pintsize/Widgets/bottomNav/bottomBar.dart';
 import 'package:flutter/cupertino.dart';
-
-import '../Home/homeTabs/homepageAwareness.dart';
 
 class NotificationScreen extends StatefulWidget {
   @override
@@ -25,7 +19,7 @@ class _NotificationScreenState extends State<NotificationScreen>
   late TabController _tabController;
   final List<Tuple2> _pages = [
     Tuple2('Post', NotificationSubPage()),
-    Tuple2('About', AboutPage),
+    Tuple2('About', AboutPage()),
   ];
 
   @override
@@ -44,18 +38,25 @@ class _NotificationScreenState extends State<NotificationScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: PreferredSize(
+            preferredSize: Size.fromHeight(100.0),
+            child: AppBar(
+              backgroundColor: Colors.red,
+              title: const Text('Sickle Cell Foundation of Alberta \n (SCFA)'),
+            )),
         body: NestedScrollView(
             headerSliverBuilder:
                 (BuildContext context, bool innerBoxIsScrolled) {
-              return <Widget>[
-                PortfolioSliverAppBar(_pages[_tabController.index].item1),
-                SliverPersistentHeader(
+              return <Widget>[];
+              //[
+              //PortfolioSliverAppBar(_pages[_tabController.index].item1),
+              /* SliverPersistentHeader(
                     pinned: true,
                     floating: false,
                     delegate: SliverPresistentHeader(
                         tabBar: TabBar(
                       controller: _tabController,
-                      isScrollable: true,
+                      isScrollable: false,
                       labelColor: Color(0xFFC88D67),
                       indicatorColor: Color(0xFFC88D67),
                       unselectedLabelColor: Color(0xFFCDCDCD),
@@ -63,7 +64,7 @@ class _NotificationScreenState extends State<NotificationScreen>
                           .map<Tab>((Tuple2 page) => Tab(text: page.item1))
                           .toList(),
                     )))
-              ];
+              ];*/
             },
             body: Container(
                 height: MediaQuery.of(context).size.height,
