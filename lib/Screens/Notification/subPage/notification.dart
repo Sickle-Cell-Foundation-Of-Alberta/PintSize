@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:pintsize/Screens/Donations/donation.dart';
 import 'package:pintsize/Widgets/bottomNav/bottomBar.dart';
 
-class HomeMythsnFactsSubPage extends StatelessWidget {
+class NotificationSubPage extends StatelessWidget {
   final documentTitle, documentDescription;
 
-  HomeMythsnFactsSubPage({this.documentTitle, this.documentDescription});
+  NotificationSubPage({this.documentTitle, this.documentDescription});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,7 +13,7 @@ class HomeMythsnFactsSubPage extends StatelessWidget {
         backgroundColor: Colors.red,
         elevation: 0.0,
         centerTitle: true,
-        title: Text("Myths and Facts",
+        title: Text("Post",
             style: TextStyle(
                 fontFamily: 'Varela',
                 fontSize: 20.0,
@@ -22,33 +22,28 @@ class HomeMythsnFactsSubPage extends StatelessWidget {
       body: ListView(children: [
         SizedBox(height: 15.0),
         SizedBox(height: 20.0),
-        //Center(
-        //  child: Text(documentTitle,
-        //     style: TextStyle(
-        //        fontFamily: 'Varela',
-        //       fontSize: 22.0,
-        //      fontWeight: FontWeight.bold,
-        //      color: Color(0xFFF17532))),
-        //),
+        Center(
+          child: Text(documentTitle,
+              style: TextStyle(
+                  fontFamily: 'Varela',
+                  fontSize: 22.0,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFFF17532))),
+        ),
         SizedBox(height: 10.0),
         Center(
-            child: Padding(
-          padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
           child: Text(documentDescription,
               style: TextStyle(
-                  color: Color(0xFF575E67),
-                  fontFamily: 'Varela',
-                  fontSize: 24.0)),
-        )),
+                  color: Colors.black, fontFamily: 'Varela', fontSize: 24.0)),
+        ),
         SizedBox(height: 20.0),
       ]),
       floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => DonationScreen()));
-          },
-          backgroundColor: Colors.red,
-          child: Icon(Icons.bloodtype_outlined)),
+        onPressed: () => Navigator.push(
+            context, MaterialPageRoute(builder: (context) => DonationScreen())),
+        backgroundColor: Colors.red,
+        child: Icon(Icons.bloodtype_outlined),
+      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomBar(),
     );

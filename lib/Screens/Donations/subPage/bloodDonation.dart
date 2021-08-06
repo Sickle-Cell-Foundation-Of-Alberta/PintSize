@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:pintsize/Screens/Donations/donation.dart';
 import 'package:pintsize/Widgets/bottomNav/bottomBar.dart';
 
-class HomeAwarenessSubPage extends StatelessWidget {
-  final documentTitle, documentDescription;
+class BloodDonationSubPage extends StatelessWidget {
+  final documentTitle;
 
-  HomeAwarenessSubPage({this.documentTitle, this.documentDescription});
+  BloodDonationSubPage({this.documentTitle});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,7 +13,7 @@ class HomeAwarenessSubPage extends StatelessWidget {
         backgroundColor: Colors.red,
         elevation: 0.0,
         centerTitle: true,
-        title: Text("Awareness",
+        title: Text("Donations",
             style: TextStyle(
                 fontFamily: 'Varela',
                 fontSize: 20.0,
@@ -25,9 +25,9 @@ class HomeAwarenessSubPage extends StatelessWidget {
         Center(
             child: Padding(
           padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
-          child: Text(documentDescription,
-              style: TextStyle(
-                  color: Colors.black, fontFamily: 'Varela', fontSize: 24.0)),
+          // child: Text(documentDescription,
+          //     style: TextStyle(
+          //         color: Colors.black, fontFamily: 'Varela', fontSize: 24.0)),
         )),
         SizedBox(height: 20.0),
       ]),

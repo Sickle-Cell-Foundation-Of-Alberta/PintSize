@@ -15,8 +15,10 @@ class ResourcePage extends StatelessWidget {
       backgroundColor: Color(0xFFFCFAF8),
       body: new Container(
         child: StreamBuilder(
-          stream:
-              FirebaseFirestore.instance.collection('Resources').snapshots(),
+          stream: FirebaseFirestore.instance
+              .collection('Resources')
+              .orderBy('id')
+              .snapshots(),
           builder: (BuildContext context,
               AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
             if (!snapshot.hasData) return const SizedBox.shrink();
@@ -25,7 +27,7 @@ class ResourcePage extends StatelessWidget {
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 1,
                     childAspectRatio: MediaQuery.of(context).size.width /
-                        (MediaQuery.of(context).size.height / 5)),
+                        (MediaQuery.of(context).size.height / 4)),
                 itemBuilder: (BuildContext context, int index) {
                   final databaseQuery = snapshot.data!.docs[index].data();
                   return _buildCard(databaseQuery['Title'],
@@ -67,7 +69,7 @@ Widget _buildCard(String title, String description, context) {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: Color(0xFFCC8053),
+                        color: Color(0xFFba5249),
                         fontFamily: 'Varela',
                         fontSize: 14.0)),
               ),

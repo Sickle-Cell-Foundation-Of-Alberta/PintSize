@@ -23,11 +23,13 @@ dependencies:
   html: ^0.15.0
   http: ^0.13.3
   # firebase_analytics: ^8.1.2
+  firestore_cache: ^2.1.1
 
 
   cupertino_icons: ^1.0.2
   firebase_core: ^1.3.0
   cloud_firestore: ^2.2.2
+  share: ^2.0.4
 
 dev_dependencies:
   flutter_test:

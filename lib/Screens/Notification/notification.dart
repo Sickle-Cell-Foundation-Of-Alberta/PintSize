@@ -2,30 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:pintsize/Components/SliverHeader.dart';
 import 'package:pintsize/Components/sliverappBar.dart';
 import 'package:pintsize/Screens/Donations/donation.dart';
-import 'package:pintsize/Screens/Home/subPages/awareness.dart';
-import 'package:pintsize/Screens/Home/subPages/dailyTips.dart';
-import 'package:pintsize/Screens/Home/subPages/mythsFacts.dart';
-import 'package:pintsize/Screens/Home/subPages/resources.dart';
-import 'package:pintsize/Widgets/bottomNav/bottomBar.dart';
+import 'package:pintsize/Screens/Notification/notificationPage/About.dart';
+import 'package:pintsize/Screens/Notification/notificationPage/homepageNotification.dart';
+import 'package:pintsize/Screens/Notification/subPage/notification.dart';
 import 'package:tuple/tuple.dart';
-import 'homeTabs/homepageAwareness.dart';
-import 'homeTabs/homepageDailyTips.dart';
-import 'homeTabs/homepageMythsFacts.dart';
-import 'homeTabs/homepageResources.dart';
+import 'package:pintsize/Widgets/bottomNav/bottomBar.dart';
+import 'package:flutter/cupertino.dart';
 
-class HomeScreen extends StatefulWidget {
+class NotificationScreen extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _NotificationScreenState createState() => _NotificationScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen>
+class _NotificationScreenState extends State<NotificationScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
   final List<Tuple2> _pages = [
-    Tuple2('Awareness', HomeAwarenessSubPage()),
-    Tuple2('Daily Tips', HomeDailyTipsSubPage()),
-    Tuple2('Resources', HomeResourcesSubPage()),
-    Tuple2('Myths & Facts', HomeMythsnFactsSubPage())
+    Tuple2('Post', NotificationSubPage()),
+    Tuple2('About', AboutPage()),
   ];
 
   @override
@@ -44,18 +38,25 @@ class _HomeScreenState extends State<HomeScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: PreferredSize(
+            preferredSize: Size.fromHeight(100.0),
+            child: AppBar(
+              backgroundColor: Colors.red,
+              title: const Text('Sickle Cell Foundation of Alberta \n (SCFA)'),
+            )),
         body: NestedScrollView(
             headerSliverBuilder:
                 (BuildContext context, bool innerBoxIsScrolled) {
-              return <Widget>[
-                PortfolioSliverAppBar(_pages[_tabController.index].item1),
-                SliverPersistentHeader(
+              return <Widget>[];
+              //[
+              //PortfolioSliverAppBar(_pages[_tabController.index].item1),
+              /* SliverPersistentHeader(
                     pinned: true,
                     floating: false,
                     delegate: SliverPresistentHeader(
                         tabBar: TabBar(
                       controller: _tabController,
-                      isScrollable: true,
+                      isScrollable: false,
                       labelColor: Color(0xFFC88D67),
                       indicatorColor: Color(0xFFC88D67),
                       unselectedLabelColor: Color(0xFFCDCDCD),
@@ -63,25 +64,18 @@ class _HomeScreenState extends State<HomeScreen>
                           .map<Tab>((Tuple2 page) => Tab(text: page.item1))
                           .toList(),
                     )))
-              ];
+              ];*/
             },
             body: Container(
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
                 child: TabBarView(
                   controller: _tabController,
-                  children: [
-                    AwarenessPage(),
-                    DailyTipsPage(),
-                    ResourcePage(),
-                    MythFactsPage(),
-                  ],
+                  children: [NotificationPage(), AboutPage()],
                 ))),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => DonationScreen()));
-          },
+          onPressed: () => Navigator.push(context,
+              MaterialPageRoute(builder: (context) => DonationScreen())),
           backgroundColor: Colors.red,
           child: Icon(Icons.bloodtype_outlined),
         ),
