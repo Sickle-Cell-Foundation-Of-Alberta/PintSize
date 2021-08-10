@@ -20,14 +20,27 @@ class HomeAwarenessSubPage extends StatelessWidget {
                 color: Color(0xFFFCFAF8))),
       ),
       body: ListView(children: [
-        SizedBox(height: 45.0),
-        SizedBox(height: 15.0),
+        SizedBox(height: 60.0),
         Center(
             child: Padding(
           padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
+          child: Text(documentTitle,
+              style: TextStyle(
+                  color: Colors.black,
+                  fontFamily: 'Varela',
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.bold)),
+        )),
+        Center(
+            child: Padding(
+          padding: EdgeInsets.fromLTRB(35, 5, 35, 5),
           child: Text(documentDescription,
               style: TextStyle(
-                  color: Colors.black, fontFamily: 'Varela', fontSize: 24.0)),
+                  height: 1.5,
+                  letterSpacing: 1.0,
+                  color: Colors.black,
+                  fontFamily: 'Varela',
+                  fontSize: 24.0)),
         )),
         SizedBox(height: 20.0),
       ]),

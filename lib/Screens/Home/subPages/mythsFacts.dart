@@ -20,23 +20,26 @@ class HomeMythsnFactsSubPage extends StatelessWidget {
                 color: Color(0xFFFCFAF8))),
       ),
       body: ListView(children: [
-        SizedBox(height: 15.0),
-        SizedBox(height: 20.0),
-        //Center(
-        //  child: Text(documentTitle,
-        //     style: TextStyle(
-        //        fontFamily: 'Varela',
-        //       fontSize: 22.0,
-        //      fontWeight: FontWeight.bold,
-        //      color: Color(0xFFF17532))),
-        //),
-        SizedBox(height: 10.0),
+        SizedBox(height: 60.0),
         Center(
             child: Padding(
           padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
+          child: Text(documentTitle,
+              style: TextStyle(
+                  letterSpacing: 1.0,
+                  color: Colors.black,
+                  fontFamily: 'Varela',
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.bold)),
+        )),
+        Center(
+            child: Padding(
+          padding: EdgeInsets.fromLTRB(35, 5, 35, 5),
           child: Text(documentDescription,
               style: TextStyle(
-                  color: Color(0xFF575E67),
+                  height: 1.5,
+                  letterSpacing: 1.0,
+                  color: Colors.black,
                   fontFamily: 'Varela',
                   fontSize: 24.0)),
         )),
