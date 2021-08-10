@@ -98,18 +98,23 @@ class PortfolioSliverAppBar extends StatelessWidget {
                               Expanded(
                                 child: ElevatedButton.icon(
                                     label: Text("Donate".toUpperCase(),
-                                        style: TextStyle(fontSize: 14)),
+                                        style: TextStyle(
+                                          fontSize: 14,
+                                        )),
                                     style: ButtonStyle(
                                         padding: MaterialStateProperty.all<EdgeInsets>(
                                             EdgeInsets.all(10)),
-                                        foregroundColor: MaterialStateProperty.all<Color>(
-                                            Colors.black),
+                                        foregroundColor:
+                                            MaterialStateProperty.all<Color>(
+                                                Colors.black),
                                         backgroundColor:
                                             MaterialStateProperty.all<Color>(
                                                 Colors.white),
-                                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                        shape: MaterialStateProperty.all<
+                                                RoundedRectangleBorder>(
                                             RoundedRectangleBorder(
-                                                borderRadius: BorderRadius.circular(18.0),
+                                                borderRadius:
+                                                    BorderRadius.circular(18.0),
                                                 side: BorderSide(color: Colors.red)))),
                                     icon: Icon(Icons.bloodtype_outlined, size: 17),
                                     onPressed: () => goToDonation(context)),
