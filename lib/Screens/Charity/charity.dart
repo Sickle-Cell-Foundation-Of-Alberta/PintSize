@@ -15,27 +15,30 @@ class _CharityScreenState extends State<CharityScreen> {
   @override
   Widget build(BuildContext context) {
     return WebviewScaffold(
-      url: 'https://ourscfa.org/donate-now/',
-      appBar: AppBar(
-        toolbarHeight: 40,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => goToHome(context),
+        url: 'https://ourscfa.org/donate-now/',
+        appBar: AppBar(
+          toolbarHeight: 40,
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back, color: Colors.black),
+            onPressed: () => goToHome(context),
+          ),
+          iconTheme: IconThemeData(
+            color: Colors.black, //change your color here
+          ),
+          title: Text("SCFA"),
+          backgroundColor: Color(0xffb8534c),
+          centerTitle: true,
+          elevation: 0,
         ),
-        iconTheme: IconThemeData(
-          color: Colors.black, //change your color here
-        ),
-        title: Text("SCFA"),
-        backgroundColor: Color(0xffb8534c),
-        centerTitle: true,
-        elevation: 0,
-      ),
-      withZoom: true,
-      withLocalStorage: true,
-      scrollBar: true,
-      withJavascript: true,
-      initialChild: Center(child: Text('Loading...')),
-    );
+        withZoom: true,
+        withLocalStorage: true,
+        scrollBar: true,
+        withJavascript: true,
+        initialChild: Container(
+          child: const Center(
+            child: CircularProgressIndicator(),
+          ),
+        ));
   }
 
   @override
