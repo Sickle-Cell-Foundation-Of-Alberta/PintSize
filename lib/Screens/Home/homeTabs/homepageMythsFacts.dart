@@ -68,6 +68,7 @@ Widget _buildCard(String title, String description, context) {
                 child: Text(title,
                     textAlign: TextAlign.center,
                     style: TextStyle(
+                        letterSpacing: 1.0,
                         fontWeight: FontWeight.bold,
                         color: Color(0xFFba5249),
                         fontFamily: 'Varela',

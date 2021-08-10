@@ -10,15 +10,15 @@ class NewsSubPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
+      appBar: new AppBar(
+        backgroundColor: Colors.red,
         elevation: 0.0,
         centerTitle: true,
         title: Text("News",
             style: TextStyle(
                 fontFamily: 'Varela',
                 fontSize: 20.0,
-                color: Color(0xFF545D68))),
+                color: Color(0xFFFCFAF8))),
       ),
       body: ListView(children: [
         SizedBox(height: 60.0),
@@ -69,15 +69,15 @@ class NewsSubPageURL extends StatelessWidget {
   Widget build(BuildContext context) {
     print(documentUrl);
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
+      appBar: new AppBar(
+        backgroundColor: Colors.red,
         elevation: 0.0,
         centerTitle: true,
         title: Text("News",
             style: TextStyle(
                 fontFamily: 'Varela',
                 fontSize: 20.0,
-                color: Color(0xFF545D68))),
+                color: Color(0xFFFCFAF8))),
       ),
       body: ListView(children: [
         SizedBox(height: 60.0),
