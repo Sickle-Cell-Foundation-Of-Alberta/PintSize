@@ -52,7 +52,6 @@ class _NewsScreenState extends State<NewsScreen>
                 ))),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            print('yes');
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => DonationScreen()));
           },

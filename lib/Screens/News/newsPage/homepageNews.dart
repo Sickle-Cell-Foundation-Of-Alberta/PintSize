@@ -27,8 +27,16 @@ class NewsPage extends StatelessWidget {
                         (MediaQuery.of(context).size.height / 5)),
                 itemBuilder: (BuildContext context, int index) {
                   final databaseQuery = snapshot.data!.docs[index].data();
-                  return _buildCard(databaseQuery['Title'],
-                      databaseQuery['Description'], context);
+                  if (databaseQuery['Url'] != null) {
+                    return _buildCardURL(
+                        databaseQuery['Title'],
+                        databaseQuery['Description'],
+                        databaseQuery['Url'],
+                        context);
+                  } else {
+                    return _buildCardNoURL(databaseQuery['Title'],
+                        databaseQuery['Description'], context);
+                  }
                 });
           },
         ),
@@ -37,7 +45,7 @@ class NewsPage extends StatelessWidget {
   }
 }
 
-Widget _buildCard(String title, String description, context) {
+Widget _buildCardNoURL(String title, String description, context) {
   return Padding(
     padding: EdgeInsets.only(top: 10.0, bottom: 15.0, left: 45.0, right: 45.0),
     child: InkWell(
@@ -45,6 +53,44 @@ Widget _buildCard(String title, String description, context) {
           Navigator.of(context).push(MaterialPageRoute(
               builder: (context) => NewsSubPage(
                   documentTitle: title, documentDescription: description)));
+        },
+        child: Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15.0),
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.grey.withOpacity(0.2),
+                      spreadRadius: 3.0,
+                      blurRadius: 5.0)
+                ],
+                color: Colors.white),
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              SizedBox(height: 1.0),
+              Align(
+                alignment: Alignment.center,
+                child: Text(title,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFFba5249),
+                        fontFamily: 'Varela',
+                        fontSize: 14.0)),
+              ),
+            ]))),
+  );
+}
+
+Widget _buildCardURL(String title, String description, String url, context) {
+  return Padding(
+    padding: EdgeInsets.only(top: 10.0, bottom: 15.0, left: 45.0, right: 45.0),
+    child: InkWell(
+        onTap: () {
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => NewsSubPageURL(
+                  documentTitle: title,
+                  documentDescription: description,
+                  documentUrl: url)));
         },
         child: Container(
             decoration: BoxDecoration(

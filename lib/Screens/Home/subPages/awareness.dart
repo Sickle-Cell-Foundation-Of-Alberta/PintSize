@@ -26,6 +26,7 @@ class HomeAwarenessSubPage extends StatelessWidget {
           padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
           child: Text(documentTitle,
               style: TextStyle(
+                  letterSpacing: 1.0,
                   color: Colors.black,
                   fontFamily: 'Varela',
                   fontSize: 24.0,
