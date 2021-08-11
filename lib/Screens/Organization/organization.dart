@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:pintsize/Config/backgroundPalette.dart';
+import 'package:pintsize/Screens/Donations/donation.dart';
 import 'package:pintsize/Widgets/bottomNav/bottomBar.dart';
 
 class OrganizationScreen extends StatefulWidget {
@@ -99,7 +100,10 @@ class _OrganizationScreenState extends State<OrganizationScreen> {
             ]),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => DonationScreen()));
+        },
         backgroundColor: Colors.red,
         child: Icon(Icons.bloodtype_outlined),
       ),
