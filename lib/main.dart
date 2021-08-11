@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'Screens/Charity/charity.dart';
 import 'Screens/Donations/donation.dart';
 import 'Screens/Home/home.dart';
-import 'Screens/Notification/notification.dart';
+import 'Screens/Organization/organization.dart';
 import 'Screens/onBoarding/onboardingScreen.dart';
 
 int? isviewed;
@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
           '/home': (context) => NewsScreen(),
           '/news': (context) => NewsScreen(),
           '/donate': (context) => DonationScreen(),
-          '/notification': (context) => NotificationScreen(),
+          '/notification': (context) => OrganizationScreen(),
           '/charity': (context) => CharityScreen(),
         });
   }
