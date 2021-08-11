@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:pintsize/Widgets/bottomNav/bottomBar.dart';
 
-class NotificationSubPage extends StatelessWidget {
+class OrganizationSubPage extends StatelessWidget {
   final documentTitle, documentDescription;
 
-  NotificationSubPage({this.documentTitle, this.documentDescription});
+  OrganizationSubPage({this.documentTitle, this.documentDescription});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,8 +41,8 @@ class NotificationSubPage extends StatelessWidget {
       ]),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        backgroundColor: Color(0xFFF17532),
-        child: Icon(Icons.fast_forward),
+        backgroundColor: Colors.red,
+        child: Icon(Icons.bloodtype_outlined),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomBar(),

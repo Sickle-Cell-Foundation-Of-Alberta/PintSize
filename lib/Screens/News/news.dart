@@ -15,7 +15,10 @@ class _NewsScreenState extends State<NewsScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
   final List<Tuple2> _pages = [
-    Tuple2('News', NewsSubPage()),
+    Tuple2(
+      'News',
+      NewsSubPageURL(),
+    ),
   ];
 
   @override
@@ -52,7 +55,6 @@ class _NewsScreenState extends State<NewsScreen>
                 ))),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            print('yes');
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => DonationScreen()));
           },

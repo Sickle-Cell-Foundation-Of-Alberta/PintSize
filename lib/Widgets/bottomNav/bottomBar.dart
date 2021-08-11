@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:pintsize/Screens/Charity/charity.dart';
 import 'package:pintsize/Screens/Home/home.dart';
 import 'package:pintsize/Screens/News/news.dart';
-import 'package:pintsize/Screens/Notification/notification.dart';
+import 'package:pintsize/Screens/Organization/organization.dart';
 
 class BottomBar extends StatelessWidget {
   @override
@@ -55,7 +56,7 @@ class BottomBar extends StatelessWidget {
                               Icons.volunteer_activism_outlined,
                               color: Color(0xFF676E79),
                             ),
-                            onPressed: () {},
+                            onPressed: () => goToCharity(context),
                           ),
                           IconButton(
                             icon: new Icon(
@@ -79,9 +80,14 @@ class BottomBar extends StatelessWidget {
       MaterialPageRoute(builder: (BuildContext context) => NewsScreen()),
       ModalRoute.withName('/'));
 
+  void goToCharity(context) => Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (BuildContext context) => CharityScreen()),
+      ModalRoute.withName('/'));
+
   void goToNotifications(context) => Navigator.pushAndRemoveUntil(
       context,
       MaterialPageRoute(
-          builder: (BuildContext context) => NotificationScreen()),
+          builder: (BuildContext context) => OrganizationScreen()),
       ModalRoute.withName('/'));
 }
