@@ -1,23 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:pintsize/Screens/Donations/donation.dart';
-// import 'package:share/share.dart';
+//import 'package:share/share.dart';
 
-class PortfolioSliverAppBar extends StatelessWidget {
+class AboutBar extends StatelessWidget {
   final String _title;
 
-  const PortfolioSliverAppBar(
+  const AboutBar(
     this._title, {
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SliverAppBar(
-      shape: ContinuousRectangleBorder(
-          borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(40),
-              bottomRight: Radius.circular(40))),
-      expandedHeight: 230.0,
+    return Scaffold(
+      appBar: PreferredSize(
+          preferredSize: Size.fromHeight(100),
+          child: AppBar(backgroundColor: Colors.red)),
+      body: Container(
+        child: Image.asset('assets/logo.png'),
+        decoration: BoxDecoration(shape: BoxShape.circle),
+        padding: const EdgeInsets.all(100),
+      ),
+    );
+  }
+}
+      
+      
+      
+      /*expandedHeight: 230.0,
       floating: true,
       pinned: true,
       // snap: true,
@@ -99,23 +109,18 @@ class PortfolioSliverAppBar extends StatelessWidget {
                               Expanded(
                                 child: ElevatedButton.icon(
                                     label: Text("Donate".toUpperCase(),
-                                        style: TextStyle(
-                                          fontSize: 14,
-                                        )),
+                                        style: TextStyle(fontSize: 14)),
                                     style: ButtonStyle(
                                         padding: MaterialStateProperty.all<EdgeInsets>(
                                             EdgeInsets.all(10)),
-                                        foregroundColor:
-                                            MaterialStateProperty.all<Color>(
-                                                Colors.black),
+                                        foregroundColor: MaterialStateProperty.all<Color>(
+                                            Colors.black),
                                         backgroundColor:
                                             MaterialStateProperty.all<Color>(
                                                 Colors.white),
-                                        shape: MaterialStateProperty.all<
-                                                RoundedRectangleBorder>(
+                                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                             RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(18.0),
+                                                borderRadius: BorderRadius.circular(18.0),
                                                 side: BorderSide(color: Colors.red)))),
                                     icon: Icon(Icons.bloodtype_outlined, size: 17),
                                     onPressed: () => goToDonation(context)),
@@ -125,36 +130,32 @@ class PortfolioSliverAppBar extends StatelessWidget {
                               ),
                               Expanded(
                                   child: ElevatedButton.icon(
-                                label: Text("Share".toUpperCase(),
-                                    style: TextStyle(fontSize: 14)),
-                                style: ButtonStyle(
-                                    padding:
-                                        MaterialStateProperty.all<EdgeInsets>(
-                                            EdgeInsets.all(10)),
-                                    foregroundColor:
-                                        MaterialStateProperty.all<Color>(
-                                            Colors.black),
-                                    backgroundColor:
-                                        MaterialStateProperty.all<Color>(
-                                            Colors.white),
-                                    shape: MaterialStateProperty.all<
-                                            RoundedRectangleBorder>(
-                                        RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(18.0),
-                                            side: BorderSide(color: Colors.red)))),
-                                // side: BorderSide(
-                                //     color: Colors.black)))),
-                                icon: Icon(
-                                  Icons.file_upload_outlined,
-                                  size: 17,
-                                ),
-                                onPressed: () {},
-                                // onPressed: () {
-                                //   Share.share(
-                                //       'Join our team and Donate blood today. ourscfa.org/blood-donation');
-                                // },
-                              )),
+                                      label: Text("Share".toUpperCase(),
+                                          style: TextStyle(fontSize: 14)),
+                                      style: ButtonStyle(
+                                          padding: MaterialStateProperty.all<
+                                              EdgeInsets>(EdgeInsets.all(10)),
+                                          foregroundColor:
+                                              MaterialStateProperty.all<Color>(
+                                                  Colors.black),
+                                          backgroundColor:
+                                              MaterialStateProperty.all<Color>(
+                                                  Colors.white),
+                                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                              RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(18.0),
+                                                  side: BorderSide(color: Colors.red)))),
+                                      icon: Icon(
+                                        Icons.file_upload_outlined,
+                                        size: 17,
+                                      ),
+                                      onPressed: () {
+                                        Share.share(
+                                            'Together we can make a difference in the lives of those living with Sickle Cell Disease',
+                                            subject: 'Help End Sickle Cell');
+                                        print('pass');
+                                      })),
                             ],
                           ),
                         ),
@@ -168,10 +169,4 @@ class PortfolioSliverAppBar extends StatelessWidget {
     );
     //   ),
     // );
-  }
-
-  void goToDonation(context) => Navigator.pushAndRemoveUntil(
-      context,
-      MaterialPageRoute(builder: (BuildContext context) => DonationScreen()),
-      ModalRoute.withName('/'));
-}
+  }*/
