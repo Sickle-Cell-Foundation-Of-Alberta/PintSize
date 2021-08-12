@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:pintsize/Screens/Donations/donation.dart';
 import 'package:pintsize/Widgets/bottomNav/bottomBar.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomeDailyTipsSubPage extends StatelessWidget {
-  final documentTitle, documentDescription;
+  final documentTitle, documentDescription, documentUrl;
 
-  HomeDailyTipsSubPage({this.documentTitle, this.documentDescription});
+  HomeDailyTipsSubPage(
+      {this.documentTitle, this.documentDescription, this.documentUrl});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,6 +44,21 @@ class HomeDailyTipsSubPage extends StatelessWidget {
                   color: Colors.black,
                   fontFamily: 'Varela',
                   fontSize: 24.0)),
+        )),
+        Center(
+            child: InkWell(
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(35, 5, 35, 5),
+            child: new InkWell(
+                child: new Text(documentUrl,
+                    style: TextStyle(
+                        letterSpacing: 1.0,
+                        color: Colors.blue,
+                        fontFamily: 'Varela',
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.normal)),
+                onTap: () => launch(documentUrl)),
+          ),
         )),
         SizedBox(height: 20.0),
       ]),

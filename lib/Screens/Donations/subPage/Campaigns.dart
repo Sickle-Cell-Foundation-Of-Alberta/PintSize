@@ -3,19 +3,19 @@ import 'package:pintsize/Screens/Donations/donation.dart';
 import 'package:pintsize/Widgets/bottomNav/bottomBar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class HomeResourcesSubPage extends StatelessWidget {
-  final documentTitle, documentDescription, documentUrl;
+class BloodDonationSubPage extends StatelessWidget {
+  final documentTitle, documentUrl, documentDescription;
 
-  HomeResourcesSubPage(
-      {this.documentTitle, this.documentDescription, this.documentUrl});
+  BloodDonationSubPage(
+      {this.documentTitle, this.documentUrl, this.documentDescription});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: new AppBar(
         backgroundColor: Colors.red,
         elevation: 0.0,
         centerTitle: true,
-        title: Text("Resources",
+        title: Text("Campaigns",
             style: TextStyle(
                 fontFamily: 'Varela',
                 fontSize: 20.0,

@@ -136,4 +136,6 @@ class NewsSubPageURL extends StatelessWidget {
       bottomNavigationBar: BottomBar(),
     );
   }
+
+  launch(documentUrl) {}
 }
