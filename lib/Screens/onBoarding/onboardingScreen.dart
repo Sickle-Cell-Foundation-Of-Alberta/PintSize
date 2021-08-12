@@ -54,13 +54,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
                             borderRadius: BorderRadius.circular(18.0),
                             side: BorderSide(color: Palette.moderateRed)))),
                 onPressed: () => goToHome(context)),
-            // Container(
-            //     alignment: Alignment.centerLeft,
-            //     padding: EdgeInsets.only(top: 100, left: 50),
-            //     child:
-            //         Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-            //       Image.asset('assets/images/flutter_onboarding_1.png'),
-            //     ])),
           ])),
       Container(
           alignment: Alignment.bottomRight,
@@ -69,19 +62,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
             left: 30,
           ),
           child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-            /*TextButton(
-                child: Text("Get Started ",
-                    style: TextStyle(fontSize: 18, color: Palette.moderateRed)),
-                style: ButtonStyle(
-                    padding: MaterialStateProperty.all<EdgeInsets>(
-                        EdgeInsets.all(20)),
-                    foregroundColor:
-                        MaterialStateProperty.all<Color>(Colors.red),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18.0),
-                            side: BorderSide(color: Palette.moderateRed)))),
-                onPressed: () => goToHome(context)),*/
             Image.asset(
               'assets/Frame.png',
               width: 200,
@@ -107,24 +87,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
                     fontSize: 25,
                     color: Palette.moderateRed,
                     fontWeight: FontWeight.normal)),
-            /*TextButton(
-                child: Text("Get Started ",
-                    style: TextStyle(fontSize: 18, color: Palette.moderateRed)),
-                style: ButtonStyle(
-                    padding: MaterialStateProperty.all<EdgeInsets>(
-                        EdgeInsets.all(20)),
-                    foregroundColor:
-                        MaterialStateProperty.all<Color>(Colors.red),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18.0),
-                            side: BorderSide(color: Palette.moderateRed)))),
-                onPressed: () => goToHome(context)),
-            Image.asset(
-              'assets/Frame.png',
-              width: 200,
-              height: 155,
-            )*/
           ])),
     ]));
   }

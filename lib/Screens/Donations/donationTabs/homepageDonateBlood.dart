@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:pintsize/Screens/Donations/subPage/bloodDonation.dart';
 import 'package:pintsize/Database/cbs_data.dart';
 
@@ -9,6 +10,32 @@ class DonateBlood extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List rows = cbsData;
+    List<Map> finalDataList = [];
+    List<String> city = [
+      'Beaumont',
+      'Calgary',
+      'Cochrane',
+      'Edmonton',
+      'Leduc',
+      'Spruce Grove',
+      'Sherwood Park'
+    ];
+    var now = new DateTime.now();
+    for (var eachCity in city) {
+      for (var indexcityRow in rows) {
+        DateTime dt = DateTime.parse(indexcityRow['Date']);
+        if (indexcityRow['Blood_Branch'] == eachCity && dt.isAfter(now)) {
+          print(indexcityRow);
+          finalDataList.add(indexcityRow);
+          break;
+        }
+        continue;
+      }
+      continue;
+    }
+    print(finalDataList);
+
     return Scaffold(
         body: Container(
       child: Column(
@@ -17,8 +44,7 @@ class DonateBlood extends StatelessWidget {
         children: <Widget>[
           Expanded(
             child: ListView.builder(
-// scrollDirection: Axis.horizontal,
-                itemCount: cbsData.length,
+                itemCount: 6,
                 itemBuilder: (context, index) {
                   return Container(
                     padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
@@ -49,7 +75,7 @@ class DonateBlood extends StatelessWidget {
                                                 height: 10,
                                               ),
                                               bloodServicesLocation(
-                                                  cbsData[index]),
+                                                  finalDataList[index]),
                                               Spacer(),
                                               SizedBox(
                                                 width: 10,
@@ -61,7 +87,8 @@ class DonateBlood extends StatelessWidget {
                                           ),
                                           Row(
                                             children: <Widget>[
-                                              bloodDonationDates(cbsData[index])
+                                              bloodDonationDates(
+                                                  finalDataList[index])
                                             ],
                                           )
                                         ],
@@ -135,22 +162,3 @@ class DonateBlood extends StatelessWidget {
     );
   }
 }
-
-    // return Align(
-    //   alignment: Alignment.topLeft,
-    //   child: RichText(
-    //     text: TextSpan(
-    //       text: '${data['name']}',
-    //       style: TextStyle(
-    //           fontWeight: FontWeight.bold, color: Colors.black, fontSize: 15),
-    //       children: <TextSpan>[
-    //         TextSpan(
-    //             text: '\n${data['symbol']}',
-    //             style: TextStyle(
-    //                 color: Colors.grey,
-    //                 fontSize: 15,
-    //                 fontWeight: FontWeight.bold)),
-    //       ],
-    //     ),
-    //   ),
-    // );
