@@ -3,9 +3,9 @@ import 'package:pintsize/Screens/Donations/donation.dart';
 import 'package:pintsize/Widgets/bottomNav/bottomBar.dart';
 
 class BloodDonationSubPage extends StatelessWidget {
-  final documentTitle;
+  final documentTitle, documentUrl;
 
-  BloodDonationSubPage({this.documentTitle});
+  BloodDonationSubPage({this.documentTitle, this.documentUrl});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,7 +13,7 @@ class BloodDonationSubPage extends StatelessWidget {
         backgroundColor: Colors.red,
         elevation: 0.0,
         centerTitle: true,
-        title: Text("Donations",
+        title: Text("Campaigns",
             style: TextStyle(
                 fontFamily: 'Varela',
                 fontSize: 20.0,
@@ -25,9 +25,6 @@ class BloodDonationSubPage extends StatelessWidget {
         Center(
             child: Padding(
           padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
-          // child: Text(documentDescription,
-          //     style: TextStyle(
-          //         color: Colors.black, fontFamily: 'Varela', fontSize: 24.0)),
         )),
         SizedBox(height: 20.0),
       ]),

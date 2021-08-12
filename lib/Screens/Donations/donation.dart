@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pintsize/Components/SliverHeader.dart';
 import 'package:pintsize/Components/silverappBarDonation.dart';
-import 'package:pintsize/Screens/Donations/subPage/bloodDonation.dart';
+import 'package:pintsize/Screens/Donations/subPage/Campaigns.dart';
 import 'package:tuple/tuple.dart';
 import 'package:pintsize/Widgets/bottomNav/bottomBar.dart';
 import 'package:flutter/cupertino.dart';

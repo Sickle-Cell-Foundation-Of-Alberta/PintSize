@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:pintsize/Screens/Donations/subPage/bloodDonation.dart';
+import 'package:pintsize/Screens/Donations/subPage/Campaigns.dart';
 import 'package:pintsize/Database/cbs_data.dart';
 
 class DonateBlood extends StatelessWidget {

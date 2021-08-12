@@ -15,8 +15,6 @@ Future<void> main() async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
   isviewed = prefs.getInt('isviewed');
   await prefs.setInt("isviewed", 1);
-  // ignore: unnecessary_brace_in_string_interps
-  print('initScreen ${isviewed}');
   await Firebase.initializeApp();
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
@@ -55,18 +53,3 @@ goToHome(context) => Navigator.pushAndRemoveUntil(
     context,
     MaterialPageRoute(builder: (BuildContext context) => HomeScreen()),
     ModalRoute.withName('/'));
-
-
-
-
-  // title: title,
-  //       debugShowCheckedModeBanner: false,
-  //       theme: ThemeData(primaryColor: Colors.white),
-  //       initialRoute: isviewed == 0 || isviewed == null ? "/" : "/home",
-  //       routes: {
-  //         '/': (context) => OnBoardingScreen(),`
-  //         '/home': (context) => HomeScreen(),
-  //         '/news': (context) => NewsScreen(),
-  //         '/donate': (context) => DonationScreen(),
-  //         '/notification': (context) => NotificationScreen(),
-  //       });
