@@ -44,10 +44,12 @@ class _OrganizationScreenState extends State<OrganizationScreen> {
                 ),
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage(
-                        'assets/scfa_footer_logo.png',
-                      ),
-                      fit: BoxFit.scaleDown),
+                    image: AssetImage(
+                      'assets/scfa_footer_logo.png',
+                    ),
+                    //scale: .9,
+                    //fit: BoxFit.fitWidth
+                  ),
                   color: Palette.moderateRed,
                   //shape: BoxShape.circle
                 ),
