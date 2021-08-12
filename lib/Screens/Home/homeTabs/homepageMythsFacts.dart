@@ -45,7 +45,7 @@ class MythFactsPage extends StatelessWidget {
 Widget _buildCardNoURL(String title, String description, context) {
   return Padding(
       padding:
-          EdgeInsets.only(top: 10.0, bottom: 15.0, left: 15.0, right: 15.0),
+          EdgeInsets.only(top: 10.0, bottom: 15.0, left: 25.0, right: 35.0),
       child: InkWell(
         onTap: () {
           Navigator.of(context).push(MaterialPageRoute(

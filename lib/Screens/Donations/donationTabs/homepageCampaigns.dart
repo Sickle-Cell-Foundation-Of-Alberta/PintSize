@@ -55,8 +55,8 @@ Widget _buildCardNoURL(String title, String description, context) {
       child: InkWell(
         onTap: () {
           Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) =>
-                  BloodDonationSubPage(documentTitle: title)));
+              builder: (context) => BloodDonationSubPage(
+                  documentTitle: title, documentDescription: description)));
         },
         child: Container(
             decoration: BoxDecoration(
@@ -92,7 +92,9 @@ Widget _buildCardURL(String title, String description, String url, context) {
         onTap: () {
           Navigator.of(context).push(MaterialPageRoute(
               builder: (context) => BloodDonationSubPage(
-                  documentTitle: title, documentUrl: url)));
+                  documentTitle: title,
+                  documentDescription: description,
+                  documentUrl: url)));
         },
         child: Container(
             decoration: BoxDecoration(
@@ -116,7 +118,7 @@ Widget _buildCardURL(String title, String description, String url, context) {
                         fontWeight: FontWeight.bold,
                         color: Color(0xFFba5249),
                         fontFamily: 'Varela',
-                        fontSize: 24.0)),
+                        fontSize: 14.0)),
               ),
             ]))),
   );
