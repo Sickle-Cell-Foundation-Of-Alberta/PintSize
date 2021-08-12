@@ -55,19 +55,17 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
                             side: BorderSide(color: Palette.moderateRed)))),
                 onPressed: () => goToHome(context)),
           ])),
-      Container(
-          alignment: Alignment.bottomRight,
-          padding: EdgeInsets.only(
-            bottom: 235,
-            left: 30,
-          ),
+    Container(
           child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-            Image.asset(
-              'assets/Frame.png',
-              width: 200,
-              height: 150,
-            )
-          ])),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(15, 350, 0, 220),
+          child: Image.asset(
+            'assets/logo.png',
+            width: 200,
+            height: 300,
+          ),
+        )
+      ])),
       Container(
           alignment: Alignment.bottomCenter,
           padding: EdgeInsets.only(top: 450, right: 140, left: 10),

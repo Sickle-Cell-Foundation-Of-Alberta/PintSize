@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pintsize/Screens/Donations/donation.dart';
-// import 'package:share/share.dart';
+import 'package:share/share.dart';
 
 class PortfolioSliverAppBar extends StatelessWidget {
   final String _title;
@@ -149,11 +149,11 @@ class PortfolioSliverAppBar extends StatelessWidget {
                                   Icons.file_upload_outlined,
                                   size: 17,
                                 ),
-                                onPressed: () {},
-                                // onPressed: () {
-                                //   Share.share(
-                                //       'Join our team and Donate blood today. ourscfa.org/blood-donation');
-                                // },
+                                //onPressed: () {},
+                                onPressed: () {
+                                  Share.share(
+                                      'Join our team and Donate blood today. ourscfa.org/blood-donation');
+                                },
                               )),
                             ],
                           ),
