@@ -17,7 +17,7 @@ class _OrganizationScreenState extends State<OrganizationScreen> {
       floating: true,
       pinned: true,
       snap: false,
-      expandedHeight: 140,
+      expandedHeight: 300,
     );
   }
 
@@ -30,7 +30,7 @@ class _OrganizationScreenState extends State<OrganizationScreen> {
                 parent: AlwaysScrollableScrollPhysics()),
             children: [
               Container(
-                height: 250,
+                height: 150,
                 child: Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -43,7 +43,13 @@ class _OrganizationScreenState extends State<OrganizationScreen> {
                   ),
                 ),
                 decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage(
+                        'assets/scfa_footer_logo.png',
+                      ),
+                      fit: BoxFit.scaleDown),
                   color: Palette.moderateRed,
+                  //shape: BoxShape.circle
                 ),
               ),
               Container(
@@ -56,24 +62,33 @@ class _OrganizationScreenState extends State<OrganizationScreen> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
-                              CircleAvatar(
-                                radius: 45,
-                                backgroundColor: Palette.softOrange,
-                              ),
+                              Container(
+                                  width: 80,
+                                  height: 80,
+                                  decoration: BoxDecoration(
+                                    /*image: DecorationImage(
+                                        image:
+                                            AssetImage('assets/Background.png'),
+                                        fit: BoxFit.fitHeight),*/
+                                    color: Palette.moderateRed,
+                                    shape: BoxShape.circle,
+                                  )),
                             ]),
                         SizedBox(height: 10),
-                        Text(
-                          'NAME',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                        Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: Text(
+                              'SCFA',
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )),
                         SizedBox(height: 10),
                         Text(
-                          "BIO",
+                          "The Sickle Cell Foundation of Alberta (SCFA) is a volunteer-based organization dedicated to creating awareness about SCD and providing support services to patients living in Alberta.",
                           style: TextStyle(
-                            fontSize: 15,
+                            fontSize: 13,
                           ),
                         ),
                         SizedBox(height: 20),
